@@ -9,8 +9,15 @@ export async function up(knex: Knex): Promise<void> {
       .defaultTo(knex.raw('uuid_generate_v4()'));
 
     table.string('name').notNullable();
-    table.date('createdAt').notNullable();
-    table.date('updatedAt').notNullable();
+
+    table
+      .timestamp('createdAt')
+      .notNullable()
+      .defaultTo(new Date().toLocaleString());
+    table
+      .timestamp('updatedAt')
+      .notNullable()
+      .defaultTo(new Date().toLocaleString());
   });
 }
 

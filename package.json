@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "clear && ts-node-dev --inspect --ignore-watch node_modules src/server.ts"
+    "dev": "clear && ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",

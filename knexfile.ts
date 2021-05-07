@@ -19,9 +19,16 @@ module.exports = {
   migrations: {
     extension: 'ts',
     tableName: 'knexmigrations',
-    directory: resolve(__dirname, 'src', 'database', 'migrations'),
+    directory: resolve(
+      __dirname,
+      'src',
+      'shared',
+      'infra',
+      'knex',
+      'migrations'
+    ),
   },
   seeds: {
-    directory: resolve(__dirname, 'src', 'database', 'seeds'),
+    directory: resolve(__dirname, 'src', 'shared', 'infra', 'knex', 'seeds'),
   },
 };

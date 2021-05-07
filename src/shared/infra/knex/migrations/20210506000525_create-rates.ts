@@ -1,9 +1,9 @@
 import { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
-  return knex.schema.createTable('comments', (table) => {
+  return knex.schema.createTable('rates', (table) => {
     table
-      .uuid('comment_id')
+      .uuid('rate_id')
       .primary()
       .notNullable()
       .defaultTo(knex.raw('uuid_generate_v4()'));
@@ -24,12 +24,19 @@ export async function up(knex: Knex): Promise<void> {
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
-    table.string('comment', 500).notNullable();
-    table.date('createdAt').notNullable();
-    table.date('updatedAt').notNullable();
+    table.integer('rate').unsigned().notNullable();
+
+    table
+      .timestamp('createdAt')
+      .notNullable()
+      .defaultTo(new Date().toLocaleString());
+    table
+      .timestamp('updatedAt')
+      .notNullable()
+      .defaultTo(new Date().toLocaleString());
   });
 }
 
 export async function down(knex: Knex): Promise<void> {
-  return knex.schema.dropTable('comments');
+  return knex.schema.dropTable('rates');
 }

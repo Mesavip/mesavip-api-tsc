@@ -1,9 +1,9 @@
 import { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
-  return knex.schema.createTable('rates', (table) => {
+  return knex.schema.createTable('hours', (table) => {
     table
-      .uuid('rate_id')
+      .uuid('hour_id')
       .primary()
       .notNullable()
       .defaultTo(knex.raw('uuid_generate_v4()'));
@@ -16,20 +16,19 @@ export async function up(knex: Knex): Promise<void> {
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
-    table
-      .uuid('client_id')
-      .notNullable()
-      .references('user_id')
-      .inTable('users')
-      .onUpdate('CASCADE')
-      .onDelete('SET NULL');
+    table.string('hour').notNullable();
 
-    table.integer('rate').notNullable();
-    table.date('createdAt').notNullable();
-    table.date('updatedAt').notNullable();
+    table
+      .timestamp('createdAt')
+      .notNullable()
+      .defaultTo(new Date().toLocaleString());
+    table
+      .timestamp('updatedAt')
+      .notNullable()
+      .defaultTo(new Date().toLocaleString());
   });
 }
 
 export async function down(knex: Knex): Promise<void> {
-  return knex.schema.dropTable('rates');
+  return knex.schema.dropTable('hours');
 }

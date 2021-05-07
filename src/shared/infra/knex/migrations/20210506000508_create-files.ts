@@ -19,8 +19,15 @@ export async function up(knex: Knex): Promise<void> {
     table.string('path').unique().notNullable();
     table.string('public_id').notNullable();
     table.string('type').notNullable();
-    table.date('createdAt').notNullable();
-    table.date('updatedAt').notNullable();
+
+    table
+      .timestamp('createdAt')
+      .notNullable()
+      .defaultTo(new Date().toLocaleString());
+    table
+      .timestamp('updatedAt')
+      .notNullable()
+      .defaultTo(new Date().toLocaleString());
   });
 }
 
