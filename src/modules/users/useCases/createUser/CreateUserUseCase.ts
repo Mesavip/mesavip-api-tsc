@@ -1,8 +1,15 @@
 import { hash } from 'bcrypt';
 
-import { AppError } from '../../../shared/errors/AppError';
-import query from '../../../shared/infra/knex/knex';
-import { ICreateUserDTO } from '../dtos/ICreateUserDTO';
+import { AppError } from '../../../../shared/errors/AppError';
+import query from '../../../../shared/infra/knex/knex';
+
+interface ICreateUser {
+  name: string;
+  email: string;
+  user_register_type: string;
+  type: string;
+  password: string;
+}
 
 class CreateUserUseCase {
   async execute({
@@ -11,7 +18,7 @@ class CreateUserUseCase {
     user_register_type,
     type,
     password,
-  }: ICreateUserDTO): Promise<void> {
+  }: ICreateUser): Promise<void> {
     const userAlreadyExists = await query('users').where({ email }).first();
 
     if (userAlreadyExists) {
