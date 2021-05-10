@@ -4,9 +4,7 @@ import { UploadFilesUseCase } from './UploadFilesUseCase';
 
 class UploadFilesController {
   async handle(request: Request, response: Response): Promise<Response> {
-    // const { type, transformation } = request.body;
-    const type = 'banner';
-    const transformation = 'mesavip-banner-restaurante';
+    const { type, transformation } = request.body;
     const { id } = request.user;
     const { tempFilePath } = (request as any).files.file;
 
