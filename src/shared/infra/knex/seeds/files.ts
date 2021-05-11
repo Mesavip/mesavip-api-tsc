@@ -461,7 +461,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       path:
         'https://res.cloudinary.com/du39ecvjf/image/upload/v1618864855/Mesavip/Seeds/Galeria/seed-galeria-18-1.jpg',
-      user_id: restaurant_ids[9],
+      user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
       createdAt: new Date(),
@@ -470,7 +470,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       path:
         'https://res.cloudinary.com/du39ecvjf/image/upload/v1618864855/Mesavip/Seeds/Galeria/seed-galeria-18-2.jpg',
-      user_id: restaurant_ids[9],
+      user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
       createdAt: new Date(),
@@ -479,7 +479,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       path:
         'https://res.cloudinary.com/du39ecvjf/image/upload/v1618864855/Mesavip/Seeds/Galeria/seed-galeria-18-3.jpg',
-      user_id: restaurant_ids[9],
+      user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
       createdAt: new Date(),
@@ -488,7 +488,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       path:
         'https://res.cloudinary.com/du39ecvjf/image/upload/v1618864855/Mesavip/Seeds/Galeria/seed-galeria-18-4.jpg',
-      user_id: restaurant_ids[9],
+      user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
       createdAt: new Date(),
@@ -497,7 +497,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       path:
         'https://res.cloudinary.com/du39ecvjf/image/upload/v1618864855/Mesavip/Seeds/Galeria/seed-galeria-18-5.jpg',
-      user_id: restaurant_ids[9],
+      user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
       createdAt: new Date(),
@@ -506,7 +506,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       path:
         'https://res.cloudinary.com/du39ecvjf/image/upload/v1618865681/Mesavip/Seeds/jcj7nroh9tofczwwo730.jpg',
-      user_id: restaurant_ids[9],
+      user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/jcj7nroh9tofczwwo730',
       type: 'banner',
       createdAt: new Date(),
@@ -515,7 +515,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       path:
         'https://res.cloudinary.com/du39ecvjf/image/upload/v1618865683/Mesavip/Seeds/tkbrcqboi9unej3bncgt.jpg',
-      user_id: restaurant_ids[9],
+      user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/tkbrcqboi9unej3bncgt',
       type: 'list',
       createdAt: new Date(),
