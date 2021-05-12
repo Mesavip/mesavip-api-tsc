@@ -10,7 +10,7 @@ class ListAllRestaurantsUseCase {
         'c.name as culinary',
         'a.bairro',
         'f.path',
-        query.raw('cast(avg(rates.rate) as decimal(10,1)) as average'),
+        query.raw('cast(avg(rates.rate) as decimal(10,1)) as average_rate'),
       ])
       .from({ u: 'users' })
       .innerJoin({ r: 'restaurants' }, 'u.user_id', 'r.restaurant_id')

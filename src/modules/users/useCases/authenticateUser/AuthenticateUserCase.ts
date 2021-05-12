@@ -40,6 +40,7 @@ class AuthenticateUserCase {
       { userId: user.user_id, userType: user.type },
       secret_key,
       {
+        subject: user.user_id,
         expiresIn,
       }
     );

@@ -20,9 +20,9 @@ class ListOneRestaurantUseCase {
         'a.logradouro',
         'a.numero',
         'a.complemento',
-        query.raw('cast(avg(rates.rate) as decimal(10,1)) AS average'),
+        query.raw('cast(avg(rates.rate) as decimal(10,1)) AS average_rate'),
       ])
-      .count('rates.rate as totalratings')
+      .count('rates.rate as total_ratings')
       .from({ u: 'users' })
       .innerJoin({ r: 'restaurants' }, 'u.user_id', 'r.restaurant_id')
       .innerJoin({ c: 'culinaries' }, 'c.culinary_id', 'r.culinary_id')

@@ -8,8 +8,6 @@ class UploadFilesController {
     const { id } = request.user;
     const { tempFilePath } = (request as any).files.file;
 
-    console.log(request.user);
-
     const uploadFilesUseCase = new UploadFilesUseCase();
     const files = await uploadFilesUseCase.execute({
       user_id: id,
