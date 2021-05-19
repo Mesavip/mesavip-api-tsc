@@ -1,11 +1,12 @@
-import { AppError } from '../../../../shared/errors/AppError';
-import query from '../../../../shared/infra/knex/knex';
+import { Request, Response } from 'express';
+
+import query from '../../../shared/infra/knex/knex';
 
 class ListAllRestaurantsUseCase {
-  async execute(): Promise<any[]> {
+  async execute(request: Request, response: Response): Promise<Response> {
     const restaurants = await query
       .select([
-        'u.user_id',
+        'u.user_id as id',
         'u.name',
         'c.name as culinary',
         'a.bairro',
@@ -27,10 +28,11 @@ class ListAllRestaurantsUseCase {
         'a.address_id',
       ]);
 
-    if (!restaurants) {
-      throw new AppError('Restaurants not found');
+    if (!restaurants.length) {
+      return response.status(400).json({ error: 'Restaurants not found' });
     }
-    return restaurants;
+
+    return response.status(201).json(restaurants);
   }
 }
 export { ListAllRestaurantsUseCase };

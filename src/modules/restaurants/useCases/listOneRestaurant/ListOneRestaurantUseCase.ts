@@ -12,6 +12,7 @@ class ListOneRestaurantUseCase {
         'u.name',
         'r.about',
         'r.phone',
+        'r.site',
         'c.name AS culinary',
         'a.bairro',
         'a.cidade',

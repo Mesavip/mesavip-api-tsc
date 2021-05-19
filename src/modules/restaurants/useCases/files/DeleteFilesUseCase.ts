@@ -1,16 +1,14 @@
 import cloudinary from 'cloudinary';
+import { Request, Response } from 'express';
 
 import * as cloudinaryConfig from '../../../../config/cloudinary';
-import { AppError } from '../../../../shared/errors/AppError';
 import query from '../../../../shared/infra/knex/knex';
 
-interface IRequest {
-  restaurant_id: string;
-  type: string;
-}
-
 class DeleteFilesUseCase {
-  async execute({ restaurant_id, type }: IRequest): Promise<void> {
+  async execute(request: Request, response: Response): Promise<Response> {
+    const restaurant_id = request.user.id;
+    const { type } = request.params;
+
     const files = await query
       .select('public_id', 'type')
       .from('files')
@@ -25,8 +23,10 @@ class DeleteFilesUseCase {
         }
       });
 
-    if (!files) {
-      throw new AppError(`Files with ${type} type not found`);
+    if (!files.length) {
+      return response
+        .status(400)
+        .json({ error: `Files with ${type} type not found` });
     }
 
     const filesToBeDeleted = files.map((file) => file.public_id);
@@ -34,10 +34,12 @@ class DeleteFilesUseCase {
     cloudinary.v2.config(cloudinaryConfig);
     await cloudinary.v2.api.delete_resources(filesToBeDeleted);
 
-    const deletedFiles = await query('files')
+    await query('files')
       .whereIn('public_id', filesToBeDeleted)
       .andWhere({ user_id: restaurant_id })
       .delete();
+
+    return response.status(201).send();
   }
 }
 export { DeleteFilesUseCase };

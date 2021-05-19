@@ -1,4 +1,5 @@
 import cloudinary from 'cloudinary';
+import { Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
 import 'dotenv/config';
@@ -6,20 +7,12 @@ import 'dotenv/config';
 import * as cloudinaryConfig from '../../../../config/cloudinary';
 import query from '../../../../shared/infra/knex/knex';
 
-interface IUploadFiles {
-  user_id: string;
-  type: string;
-  transformation: string;
-  tempFilePath: string;
-}
-
 class UploadFilesUseCase {
-  async execute({
-    user_id,
-    type,
-    transformation,
-    tempFilePath,
-  }: IUploadFiles): Promise<IUploadFiles> {
+  async execute(request: Request, response: Response): Promise<Response> {
+    const { type, transformation } = request.body;
+    const { id: user_id } = request.user;
+    const { tempFilePath } = (request as any).files.file;
+
     // Clean tmp folder
     fs.rm(
       path.resolve(__dirname, '..', '..', '..', '..', '..', 'tmp'),
@@ -41,14 +34,14 @@ class UploadFilesUseCase {
       }
     );
 
-    const files: IUploadFiles = await query('files').insert({
+    const files = await query('files').insert({
       path: secure_url,
       public_id,
       user_id,
       type,
     });
 
-    return files;
+    return response.status(201).json('Files uploaded successfully');
   }
 }
 export { UploadFilesUseCase };

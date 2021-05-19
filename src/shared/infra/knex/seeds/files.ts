@@ -64,18 +64,18 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       path:
-        'https://res.cloudinary.com/du39ecvjf/image/upload/v1618865602/Mesavip/Seeds/va6j93ltlul7c4tr3eop.jpg',
+        'https://res.cloudinary.com/du39ecvjf/image/upload/v1621261257/Mesavip/Seeds/glm0d3szecswuxjotabq.jpg',
       user_id: restaurant_ids[1],
-      public_id: 'Mesavip/Seeds/va6j93ltlul7c4tr3eop',
+      public_id: 'Mesavip/Seeds/glm0d3szecswuxjotabq',
       type: 'banner',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       path:
-        'https://res.cloudinary.com/du39ecvjf/image/upload/v1618865604/Mesavip/Seeds/g0z7bujvocgxrnptyxkh.jpg',
+        'https://res.cloudinary.com/du39ecvjf/image/upload/v1621261260/Mesavip/Seeds/dhn6okqfxbsimtyqf5ur.jpg',
       user_id: restaurant_ids[1],
-      public_id: 'Mesavip/Seeds/g0z7bujvocgxrnptyxkh',
+      public_id: 'Mesavip/Seeds/dhn6okqfxbsimtyqf5ur',
       type: 'list',
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -253,18 +253,18 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       path:
-        'https://res.cloudinary.com/du39ecvjf/image/upload/v1618865655/Mesavip/Seeds/zy7bp09rngldpgvfl2mu.jpg',
+        'https://res.cloudinary.com/du39ecvjf/image/upload/v1621261112/Mesavip/Seeds/npmqrnk4ovsynj8ynwmj.jpg',
       user_id: restaurant_ids[4],
-      public_id: 'Mesavip/Seeds/zy7bp09rngldpgvfl2mu',
+      public_id: 'Mesavip/Seeds/npmqrnk4ovsynj8ynwmj',
       type: 'banner',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       path:
-        'https://res.cloudinary.com/du39ecvjf/image/upload/v1618865657/Mesavip/Seeds/popd3xsgvlvqlio6lcvm.jpg',
+        'https://res.cloudinary.com/du39ecvjf/image/upload/v1621261114/Mesavip/Seeds/df8u0xcof7o4obfhwh2f.jpg',
       user_id: restaurant_ids[4],
-      public_id: 'Mesavip/Seeds/popd3xsgvlvqlio6lcvm',
+      public_id: 'Mesavip/Seeds/df8u0xcof7o4obfhwh2f',
       type: 'list',
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -757,18 +757,18 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       path:
-        'https://res.cloudinary.com/du39ecvjf/image/upload/v1618865698/Mesavip/Seeds/akzomiomma2rajfilsof.jpg',
+        'https://res.cloudinary.com/du39ecvjf/image/upload/v1621260895/Mesavip/Seeds/psfjgtrjvtrd5adwkssi.jpg',
       user_id: restaurant_ids[12],
-      public_id: 'Mesavip/Seeds/akzomiomma2rajfilsof',
+      public_id: 'Mesavip/Seeds/psfjgtrjvtrd5adwkssi',
       type: 'banner',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       path:
-        'https://res.cloudinary.com/du39ecvjf/image/upload/v1618865700/Mesavip/Seeds/ibycjkzcu1lej8sy94ks.jpg',
+        'https://res.cloudinary.com/du39ecvjf/image/upload/v1621260897/Mesavip/Seeds/p5ssrfs0hub4gkb1z2kb.jpg',
       user_id: restaurant_ids[12],
-      public_id: 'Mesavip/Seeds/ibycjkzcu1lej8sy94ks',
+      public_id: 'Mesavip/Seeds/p5ssrfs0hub4gkb1z2kb',
       type: 'list',
       createdAt: new Date(),
       updatedAt: new Date(),

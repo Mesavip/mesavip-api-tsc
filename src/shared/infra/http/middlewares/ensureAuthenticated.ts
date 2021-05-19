@@ -20,7 +20,7 @@ export async function ensureAuthenticated(
   const secret_key: any = authConfig.secretKey;
 
   if (!authHeader) {
-    return response.status(401).json({ error: 'Token not provided' });
+    throw new AppError('Token missing', 401);
   }
 
   const [, token] = authHeader.split(' ');
