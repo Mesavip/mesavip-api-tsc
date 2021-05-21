@@ -3,9 +3,9 @@
     "node": "14.16.1"
   },
   "scripts": {
-    "postbuild": "tsc",
+    "build": "tsc",
     "dev": "clear && ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
-    "start": "node dist/src/shared/infra/http/server.js"
+    "start": "ts-node src/shared/infra/http/server.ts"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
