@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "14.16.1"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "clear && ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
