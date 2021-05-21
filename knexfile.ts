@@ -1,8 +1,8 @@
 import 'dotenv/config';
 import { resolve } from 'path';
-// import * as pg from 'pg';
+import pg from 'pg';
 
-// pg.defaults.ssl = process.env.NODE_ENV === 'production';
+pg.defaults.ssl = process.env.NODE_ENV === 'production';
 
 module.exports = {
   client: 'pg',
