@@ -1,15 +1,11 @@
-import { parseISO } from 'date-fns';
 import { Request, Response } from 'express';
 
 import query from '../../../../shared/infra/knex/knex';
 
 class CreateReservationsUseCase {
   async execute(request: Request, response: Response): Promise<Response> {
-    const { hour_id, restaurant_id } = request.params;
-    const { date } = request.body;
+    const { date, hour_id, restaurant_id } = request.params;
     const { id: client_id } = request.user;
-
-    const dateISO = parseISO(date);
 
     const table = await query
       .select('table_id')
@@ -19,7 +15,7 @@ class CreateReservationsUseCase {
           r: 'reservations',
         }).whereRaw(
           `r.table_id = t.table_id AND r.hour_id = ? AND r.date = ?`,
-          [hour_id, dateISO]
+          [hour_id, date]
         )
       )
       .andWhere({ 't.restaurant_id': restaurant_id })

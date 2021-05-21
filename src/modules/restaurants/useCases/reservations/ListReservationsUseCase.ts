@@ -3,10 +3,7 @@ import { Request, Response } from 'express';
 import query from '../../../../shared/infra/knex/knex';
 
 class ListReservationsUseCase {
-  async execute(
-    request: Request,
-    response: Response
-  ): Promise<any[] | Response> {
+  async execute(request: Request, response: Response): Promise<Response> {
     const { id: client_id } = request.user;
 
     const reservations = await query

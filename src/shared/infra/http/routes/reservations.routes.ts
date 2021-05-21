@@ -22,7 +22,7 @@ resevationsRoutes.get(
   listReservationsUseCase.execute
 );
 resevationsRoutes.post(
-  '/create/:restaurant_id/:hour_id',
+  '/create/:restaurant_id/:hour_id/:date',
   ensureAuthenticated,
   createReservationsUseCase.execute
 );

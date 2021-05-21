@@ -34,7 +34,7 @@ class UploadFilesUseCase {
       }
     );
 
-    const files = await query('files').insert({
+    await query('files').insert({
       path: secure_url,
       public_id,
       user_id,

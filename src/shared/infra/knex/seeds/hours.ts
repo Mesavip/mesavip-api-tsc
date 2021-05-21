@@ -1,6 +1,6 @@
 import { Knex } from 'knex';
 
-const hours = ['20:00:00', '21:00:00', '22:00:00', '23:00:00'];
+const hours = ['20:00', '21:00', '22:00', '23:00'];
 
 const restaurant_ids = {
   1: '3eb6cc7e-36f2-49af-b675-902cf3a0df36',
