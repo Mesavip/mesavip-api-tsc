@@ -11,6 +11,7 @@ module.exports = {
     user: process.env.DB_USER,
     database: process.env.DB_NAME,
     password: process.env.DB_PASS,
+    ssl: true,
   },
   pool: {
     min: 2,
@@ -30,9 +31,5 @@ module.exports = {
   },
   seeds: {
     directory: resolve(__dirname, 'src', 'shared', 'infra', 'knex', 'seeds'),
-  },
-  production: {
-    client: 'pg',
-    connection: process.env.DATABASE_URL,
   },
 };
