@@ -5,8 +5,8 @@ import { resolve } from 'path';
 // pg.defaults.ssl = process.env.NODE_ENV === 'production';
 
 module.exports = {
+  client: 'pg',
   development: {
-    client: 'pg',
     connection: {
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
@@ -35,7 +35,6 @@ module.exports = {
     },
   },
   production: {
-    client: 'pg',
     connection: {
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
