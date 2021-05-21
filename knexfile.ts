@@ -31,6 +31,14 @@ module.exports = {
     ),
   },
   seeds: {
-    directory: resolve(__dirname, 'src', 'shared', 'infra', 'knex', 'seeds'),
+    directory: resolve(
+      __dirname,
+      process.env.NODE_ENV === 'production' ? 'dist' : '',
+      'src',
+      'shared',
+      'infra',
+      'knex',
+      'seeds'
+    ),
   },
 };
