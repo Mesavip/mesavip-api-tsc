@@ -31,4 +31,8 @@ module.exports = {
   seeds: {
     directory: resolve(__dirname, 'src', 'shared', 'infra', 'knex', 'seeds'),
   },
+  production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
+  },
 };
