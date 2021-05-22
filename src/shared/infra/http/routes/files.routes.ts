@@ -12,11 +12,7 @@ const listFilesUseCase = new ListFilesUseCase();
 const deleteFilesUseCase = new DeleteFilesUseCase();
 
 filesRoutes.post('/upload', ensureAuthenticated, uploadFilesUseCase.execute);
-filesRoutes.get(
-  '/list/:restaurant_id/:type',
-  ensureAuthenticated,
-  listFilesUseCase.execute
-);
+filesRoutes.get('/list/:restaurant_id/:type', listFilesUseCase.execute);
 filesRoutes.delete(
   '/delete/:type',
   ensureAuthenticated,
