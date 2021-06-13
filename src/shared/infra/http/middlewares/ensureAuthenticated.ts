@@ -4,7 +4,6 @@ import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 
 import authConfig from '../../../../config/auth';
-import { AppError } from '../../../errors/AppError';
 
 interface IPayload {
   userId: string;
@@ -20,7 +19,7 @@ export async function ensureAuthenticated(
   const secret_key: any = authConfig.secretKey;
 
   if (!authHeader) {
-    throw new AppError('Token missing', 401);
+    return response.status(401).json({ error: 'Token is missing' });
   }
 
   const [, token] = authHeader.split(' ');
@@ -37,6 +36,6 @@ export async function ensureAuthenticated(
 
     next();
   } catch {
-    throw new AppError('Invalid token!', 401);
+    return response.status(401).json({ error: 'Token is invalid' });
   }
 }

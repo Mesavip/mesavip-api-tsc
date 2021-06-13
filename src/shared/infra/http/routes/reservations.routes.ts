@@ -1,30 +1,26 @@
 import { Router } from 'express';
 
-import { CreateReservationsUseCase } from '../../../../modules/restaurants/useCases/reservations/CreateReservationsUseCase';
-import { DeleteReservationUseCase } from '../../../../modules/restaurants/useCases/reservations/DeleteReservationUseCase';
-import { ListReservationsUseCase } from '../../../../modules/restaurants/useCases/reservations/ListReservationsUseCase';
+import { CreateReservations } from '../../../../modules/reservations/CreateReservations';
+import { DeleteReservation } from '../../../../modules/reservations/DeleteReservation';
+import { ListReservations } from '../../../../modules/reservations/ListReservations';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const resevationsRoutes = Router();
 
-const deleteReservationUseCase = new DeleteReservationUseCase();
-const listReservationsUseCase = new ListReservationsUseCase();
-const createReservationsUseCase = new CreateReservationsUseCase();
+const deleteReservation = new DeleteReservation();
+const listReservations = new ListReservations();
+const createReservations = new CreateReservations();
 
 resevationsRoutes.delete(
   '/delete/:reservation_id',
   ensureAuthenticated,
-  deleteReservationUseCase.execute
+  deleteReservation.execute
 );
-resevationsRoutes.get(
-  '/list',
-  ensureAuthenticated,
-  listReservationsUseCase.execute
-);
+resevationsRoutes.get('/list', ensureAuthenticated, listReservations.execute);
 resevationsRoutes.post(
   '/create/:restaurant_id/:hour_id/:date',
   ensureAuthenticated,
-  createReservationsUseCase.execute
+  createReservations.execute
 );
 
 export { resevationsRoutes };

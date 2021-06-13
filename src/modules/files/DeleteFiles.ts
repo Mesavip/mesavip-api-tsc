@@ -1,10 +1,10 @@
 import cloudinary from 'cloudinary';
 import { Request, Response } from 'express';
 
-import * as cloudinaryConfig from '../../../../config/cloudinary';
-import query from '../../../../shared/infra/knex/knex';
+import * as cloudinaryConfig from '../../config/cloudinary';
+import query from '../../shared/infra/knex/knex';
 
-class DeleteFilesUseCase {
+class DeleteFiles {
   async execute(request: Request, response: Response): Promise<Response> {
     const restaurant_id = request.user.id;
     const { type } = request.params;
@@ -42,4 +42,4 @@ class DeleteFilesUseCase {
     return response.status(201).send();
   }
 }
-export { DeleteFilesUseCase };
+export { DeleteFiles };

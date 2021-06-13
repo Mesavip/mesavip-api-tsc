@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import query from '../../../shared/infra/knex/knex';
+import query from '../../shared/infra/knex/knex';
 
-class ListAllRestaurantsUseCase {
+class ListAllRestaurants {
   async execute(request: Request, response: Response): Promise<Response> {
     const restaurants = await query
       .select([
@@ -35,4 +35,4 @@ class ListAllRestaurantsUseCase {
     return response.status(201).json(restaurants);
   }
 }
-export { ListAllRestaurantsUseCase };
+export { ListAllRestaurants };

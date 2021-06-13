@@ -4,10 +4,10 @@ import fs from 'fs';
 import path from 'path';
 import 'dotenv/config';
 
-import * as cloudinaryConfig from '../../../../config/cloudinary';
-import query from '../../../../shared/infra/knex/knex';
+import * as cloudinaryConfig from '../../config/cloudinary';
+import query from '../../shared/infra/knex/knex';
 
-class UploadFilesUseCase {
+class UploadFiles {
   async execute(request: Request, response: Response): Promise<Response> {
     const { type, transformation } = request.body;
     const { id: user_id } = request.user;
@@ -44,4 +44,4 @@ class UploadFilesUseCase {
     return response.status(201).json('Files uploaded successfully');
   }
 }
-export { UploadFilesUseCase };
+export { UploadFiles };

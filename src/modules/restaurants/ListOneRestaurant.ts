@@ -1,12 +1,11 @@
-import { AppError } from '../../../../shared/errors/AppError';
-import query from '../../../../shared/infra/knex/knex';
+import { Request, Response } from 'express';
 
-interface IRequest {
-  restaurant_id: string;
-}
+import query from '../../shared/infra/knex/knex';
 
-class ListOneRestaurantUseCase {
-  async execute({ restaurant_id }: IRequest): Promise<any[]> {
+class ListOneRestaurant {
+  async execute(request: Request, response: Response): Promise<Response> {
+    const { restaurant_id } = request.params;
+
     const restaurant = await query
       .select([
         'u.name',
@@ -33,9 +32,10 @@ class ListOneRestaurantUseCase {
       .groupBy(['u.user_id', 'r.id', 'c.culinary_id', 'a.address_id']);
 
     if (!restaurant) {
-      throw new AppError('Restaurant not found');
+      return response.status(201).json({ error: 'Restaurant not found' });
     }
-    return restaurant;
+
+    return response.status(201).json(restaurant);
   }
 }
-export { ListOneRestaurantUseCase };
+export { ListOneRestaurant };

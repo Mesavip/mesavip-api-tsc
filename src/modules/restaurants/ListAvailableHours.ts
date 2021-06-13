@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import query from '../../../shared/infra/knex/knex';
+import query from '../../shared/infra/knex/knex';
 
-class ListAvailableHoursUseCase {
+class ListAvailableHours {
   async execute(request: Request, response: Response): Promise<Response> {
     const { restaurant_id, date } = request.params;
 
@@ -30,4 +30,4 @@ class ListAvailableHoursUseCase {
     return response.status(201).json(availableHours);
   }
 }
-export { ListAvailableHoursUseCase };
+export { ListAvailableHours };

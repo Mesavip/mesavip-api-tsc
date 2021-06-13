@@ -1,14 +1,9 @@
 import { compare } from 'bcrypt';
+import { Request, Response } from 'express';
 import { sign } from 'jsonwebtoken';
 
-import authConfig from '../../../../config/auth';
-import { AppError } from '../../../../shared/errors/AppError';
-import query from '../../../../shared/infra/knex/knex';
-
-interface IRequest {
-  email: string;
-  password: string;
-}
+import authConfig from '../../config/auth';
+import query from '../../shared/infra/knex/knex';
 
 interface IResponse {
   token: string;
@@ -19,12 +14,14 @@ interface IResponse {
   };
 }
 
-class AuthenticateUserCase {
-  async execute({ email, password }: IRequest): Promise<IResponse> {
+class AuthenticateUser {
+  async execute(request: Request, response: Response): Promise<Response> {
+    const { email, password } = request.body;
+
     const user = await query('users').where({ email }).first();
 
     if (!user) {
-      throw new AppError('Incorrect email or password');
+      return response.status(401).json({ error: 'Invalid email or password' });
     }
 
     const { expiresIn } = authConfig;
@@ -33,7 +30,7 @@ class AuthenticateUserCase {
     const doesPasswordsMatch = await compare(password, user.password_hash);
 
     if (!doesPasswordsMatch) {
-      throw new AppError('incorrect email or password');
+      return response.status(401).json({ error: 'Invalid email or password' });
     }
 
     const token = sign(
@@ -45,7 +42,7 @@ class AuthenticateUserCase {
       }
     );
 
-    const tokenReturn: IResponse = {
+    const returnToken: IResponse = {
       token,
       user: {
         name: user.name,
@@ -54,8 +51,8 @@ class AuthenticateUserCase {
       },
     };
 
-    return tokenReturn;
+    return response.status(201).json(returnToken);
   }
 }
 
-export { AuthenticateUserCase };
+export { AuthenticateUser };

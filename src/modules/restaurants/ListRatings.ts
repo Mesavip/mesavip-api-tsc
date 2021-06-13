@@ -1,18 +1,16 @@
-import { AppError } from '../../../../shared/errors/AppError';
-import query from '../../../../shared/infra/knex/knex';
+import { Request, Response } from 'express';
 
-// Do I really need that interface???
-interface IData {
-  restaurant_id: string;
-}
+import query from '../../shared/infra/knex/knex';
 
-class ListRatingsUseCase {
-  async execute({ restaurant_id }: IData): Promise<any[]> {
+class ListRatings {
+  async execute(request: Request, response: Response): Promise<Response> {
+    const { restaurant_id } = request.params;
+
     const ratings = await query
       .select([
         'comments.comment_id',
         'comments.comment',
-        'comments.createdAt',
+        query.raw(`to_char(comments."createdAt", 'Mon dd, yyyy') as date`),
         'rates.rate',
         'client.name as client',
       ])
@@ -24,9 +22,7 @@ class ListRatingsUseCase {
         'rates.restaurant_id': restaurant_id,
       });
 
-    console.log(ratings);
-
-    return ratings;
+    return response.status(201).json(ratings);
   }
 }
-export { ListRatingsUseCase };
+export { ListRatings };

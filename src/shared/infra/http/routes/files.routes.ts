@@ -1,22 +1,18 @@
 import { Router } from 'express';
 
-import { DeleteFilesUseCase } from '../../../../modules/restaurants/useCases/files/DeleteFilesUseCase';
-import { ListFilesUseCase } from '../../../../modules/restaurants/useCases/files/ListFilesUseCase';
-import { UploadFilesUseCase } from '../../../../modules/restaurants/useCases/files/UploadFilesUseCase';
+import { DeleteFiles } from '../../../../modules/files/DeleteFiles';
+import { ListFiles } from '../../../../modules/files/ListFiles';
+import { UploadFiles } from '../../../../modules/files/UploadFiles';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const filesRoutes = Router();
 
-const uploadFilesUseCase = new UploadFilesUseCase();
-const listFilesUseCase = new ListFilesUseCase();
-const deleteFilesUseCase = new DeleteFilesUseCase();
+const uploadFiles = new UploadFiles();
+const listFiles = new ListFiles();
+const deleteFiles = new DeleteFiles();
 
-filesRoutes.post('/upload', ensureAuthenticated, uploadFilesUseCase.execute);
-filesRoutes.get('/list/:restaurant_id/:type', listFilesUseCase.execute);
-filesRoutes.delete(
-  '/delete/:type',
-  ensureAuthenticated,
-  deleteFilesUseCase.execute
-);
+filesRoutes.post('/upload', ensureAuthenticated, uploadFiles.execute);
+filesRoutes.get('/list/:restaurant_id/:type', listFiles.execute);
+filesRoutes.delete('/delete/:type', ensureAuthenticated, deleteFiles.execute);
 
 export { filesRoutes };

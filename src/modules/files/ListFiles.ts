@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import query from '../../../../shared/infra/knex/knex';
+import query from '../../shared/infra/knex/knex';
 
-class ListFilesUseCase {
+class ListFiles {
   async execute(request: Request, response: Response): Promise<Response> {
     const { restaurant_id, type } = request.params;
 
@@ -15,9 +15,7 @@ class ListFilesUseCase {
       return response.status(401).json({ error: 'files not found' });
     }
 
-    console.log(files);
-
     return response.status(201).json(files);
   }
 }
-export { ListFilesUseCase };
+export { ListFiles };

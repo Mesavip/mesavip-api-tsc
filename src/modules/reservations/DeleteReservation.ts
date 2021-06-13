@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import query from '../../../../shared/infra/knex/knex';
+import query from '../../shared/infra/knex/knex';
 
-class DeleteReservationUseCase {
+class DeleteReservation {
   async execute(request: Request, response: Response): Promise<Response> {
     const { reservation_id } = request.params;
 
@@ -19,4 +19,4 @@ class DeleteReservationUseCase {
     return response.status(201).send();
   }
 }
-export { DeleteReservationUseCase };
+export { DeleteReservation };

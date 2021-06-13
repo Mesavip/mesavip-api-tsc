@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import query from '../../../../shared/infra/knex/knex';
+import query from '../../shared/infra/knex/knex';
 
-class CreateReservationsUseCase {
+class CreateReservations {
   async execute(request: Request, response: Response): Promise<Response> {
     const { date, hour_id, restaurant_id } = request.params;
     const { id: client_id } = request.user;
@@ -37,4 +37,4 @@ class CreateReservationsUseCase {
     return response.status(201).send();
   }
 }
-export { CreateReservationsUseCase };
+export { CreateReservations };

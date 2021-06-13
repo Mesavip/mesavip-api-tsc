@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import query from '../../../../shared/infra/knex/knex';
+import query from '../../shared/infra/knex/knex';
 
-class ListReservationsUseCase {
+class ListReservations {
   async execute(request: Request, response: Response): Promise<Response> {
     const { id: client_id } = request.user;
 
@@ -20,4 +20,4 @@ class ListReservationsUseCase {
     return response.status(201).json(reservations);
   }
 }
-export { ListReservationsUseCase };
+export { ListReservations };
