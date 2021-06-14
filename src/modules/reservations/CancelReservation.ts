@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 import query from '../../shared/infra/knex/knex';
 
-class DeleteReservation {
+class CancelReservation {
   async execute(request: Request, response: Response): Promise<Response> {
     const { reservation_id } = request.params;
 
@@ -14,9 +14,11 @@ class DeleteReservation {
       return response.status(400).json({ error: 'Reservation does not exist' });
     }
 
-    await query('reservations').where({ reservation_id }).delete();
+    await query('reservations')
+      .update({ canceled: true })
+      .where({ reservation_id });
 
     return response.status(201).send();
   }
 }
-export { DeleteReservation };
+export { CancelReservation };

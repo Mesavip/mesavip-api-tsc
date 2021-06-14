@@ -1,20 +1,20 @@
 import { Router } from 'express';
 
+import { CancelReservation } from '../../../../modules/reservations/CancelReservation';
 import { CreateReservations } from '../../../../modules/reservations/CreateReservations';
-import { DeleteReservation } from '../../../../modules/reservations/DeleteReservation';
 import { ListReservations } from '../../../../modules/reservations/ListReservations';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const resevationsRoutes = Router();
 
-const deleteReservation = new DeleteReservation();
+const cancelReservation = new CancelReservation();
 const listReservations = new ListReservations();
 const createReservations = new CreateReservations();
 
 resevationsRoutes.delete(
-  '/delete/:reservation_id',
+  '/cancel/:reservation_id',
   ensureAuthenticated,
-  deleteReservation.execute
+  cancelReservation.execute
 );
 resevationsRoutes.get('/list', ensureAuthenticated, listReservations.execute);
 resevationsRoutes.post(

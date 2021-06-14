@@ -11,7 +11,7 @@ class ListReservations {
       .from({ r: 'reservations' })
       .innerJoin({ h: 'hours' }, 'r.hour_id', 'h.hour_id')
       .innerJoin({ u: 'users' }, 'u.user_id', 'h.restaurant_id')
-      .where({ 'r.client_id': client_id });
+      .where({ 'r.client_id': client_id, 'r.canceled': null });
 
     if (!reservations.length) {
       return response.status(400).json({ error: 'No reservations were found' });
