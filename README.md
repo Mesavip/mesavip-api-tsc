@@ -5,7 +5,7 @@
 ### Mesavip helps you making reservations in your favorite restaurants.
 
 <div>
-  <img src=".github/react.svg" alt="react" width="20px">
+  <img src=".github/icons/react.svg" alt="react" width="20px">
   <a href="https://github.com/danielmarques12/mesavip-web">Front-end Repository</a>
   
 </div>
