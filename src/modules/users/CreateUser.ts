@@ -8,13 +8,13 @@ class CreateUser {
     const { name, email, password, cpf } = request.body;
 
     if (!cpf) {
-      return response.status(201).json({ error: 'CPF invalid' });
+      return response.status(401).json({ error: 'CPF invalid' });
     }
 
     const userAlreadyExists = await query('users').where({ email }).first();
 
     if (userAlreadyExists) {
-      return response.status(201).json({ error: 'User already exists' });
+      return response.status(401).json({ error: 'User already exists' });
     }
 
     const password_hash = await hash(password, 10);

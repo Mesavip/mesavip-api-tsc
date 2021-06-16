@@ -27,7 +27,6 @@ class ListAllRestaurants {
         'c.culinary_id',
         'a.address_id',
       ]);
-
     if (!restaurants.length) {
       return response.status(400).json({ error: 'Restaurants not found' });
     }

@@ -7,7 +7,7 @@ class ListFiles {
     const { restaurant_id, type } = request.params;
 
     const files = await query
-      .select(['file_id', 'path'])
+      .select(['file_id as id', 'path'])
       .from('files')
       .where({ user_id: restaurant_id, type });
 

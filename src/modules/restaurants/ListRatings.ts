@@ -8,7 +8,7 @@ class ListRatings {
 
     const ratings = await query
       .select([
-        'comments.comment_id',
+        'comments.comment_id as id',
         'comments.comment',
         query.raw(`to_char(comments."createdAt", 'Mon dd, yyyy') as date`),
         'rates.rate',
