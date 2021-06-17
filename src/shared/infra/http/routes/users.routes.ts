@@ -9,6 +9,6 @@ const createUser = new CreateUser();
 const authenticateUser = new AuthenticateUser();
 
 usersRoutes.post('/create', createUser.execute);
-usersRoutes.post('/login', authenticateUser.execute);
+usersRoutes.post('/signin', authenticateUser.execute);
 
 export { usersRoutes };

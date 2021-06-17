@@ -11,7 +11,10 @@ class CreateUser {
       return response.status(401).json({ error: 'CPF invalid' });
     }
 
-    const userAlreadyExists = await query('users').where({ email }).first();
+    const userAlreadyExists = await query('users')
+      .where({ email })
+      .orWhere({ cpf })
+      .first();
 
     if (userAlreadyExists) {
       return response.status(401).json({ error: 'User already exists' });
