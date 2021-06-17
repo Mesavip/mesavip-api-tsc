@@ -2,7 +2,7 @@ import { api } from '../../../config/axios';
 import query from '../../../shared/infra/knex/knex';
 
 describe('Create User', () => {
-  beforeAll(() => query('users').delete());
+  beforeAll(() => query('users').where({ email: 'client@gmail.com' }).delete());
 
   it('should be able to create an user', async () => {
     const user = {
