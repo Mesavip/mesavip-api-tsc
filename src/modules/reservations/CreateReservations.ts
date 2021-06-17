@@ -22,19 +22,21 @@ class CreateReservations {
       .first();
 
     if (!table) {
-      return response.status(400).json({ error: 'Reservation not available' });
+      return response.status(403).json({ error: 'Reservation not available' });
     }
 
     const { table_id }: any = table;
 
-    await query('reservations').insert({
-      date,
-      hour_id,
-      client_id,
-      table_id,
-    });
+    const [reservation_id] = await query('reservations')
+      .insert({
+        date,
+        hour_id,
+        client_id,
+        table_id,
+      })
+      .returning(['reservation_id']);
 
-    return response.status(201).send();
+    return response.status(201).json(reservation_id);
   }
 }
 export { CreateReservations };

@@ -14,11 +14,12 @@ class CancelReservation {
       return response.status(400).json({ error: 'Reservation does not exist' });
     }
 
-    await query('reservations')
+    const [canceled] = await query('reservations')
       .update({ canceled: true })
-      .where({ reservation_id });
+      .where({ reservation_id })
+      .returning(['canceled']);
 
-    return response.status(201).send();
+    return response.status(200).json(canceled);
   }
 }
 export { CancelReservation };
