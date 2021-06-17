@@ -22,7 +22,11 @@ class ListRatings {
         'rates.restaurant_id': restaurant_id,
       });
 
-    return response.status(201).json(ratings);
+    if (ratings.length === 0) {
+      return response.status(404).json({ error: 'No ratings were found' });
+    }
+
+    return response.status(200).json(ratings);
   }
 }
 export { ListRatings };

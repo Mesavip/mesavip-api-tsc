@@ -28,10 +28,10 @@ class ListAllRestaurants {
         'a.address_id',
       ]);
     if (!restaurants.length) {
-      return response.status(400).json({ error: 'Restaurants not found' });
+      return response.status(404).json({ error: 'Restaurants not found' });
     }
 
-    return response.status(201).json(restaurants);
+    return response.status(200).json(restaurants);
   }
 }
 export { ListAllRestaurants };

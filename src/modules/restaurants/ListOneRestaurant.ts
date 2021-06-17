@@ -32,10 +32,10 @@ class ListOneRestaurant {
       .groupBy(['u.user_id', 'r.id', 'c.culinary_id', 'a.address_id']);
 
     if (!restaurant) {
-      return response.status(201).json({ error: 'Restaurant not found' });
+      return response.status(404).json({ error: 'Restaurant not found' });
     }
 
-    return response.status(201).json(restaurant);
+    return response.status(200).json(restaurant);
   }
 }
 export { ListOneRestaurant };

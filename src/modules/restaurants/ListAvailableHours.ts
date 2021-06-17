@@ -27,7 +27,7 @@ class ListAvailableHours {
         .json({ error: 'No tables available in that date and time' });
     }
 
-    return response.status(201).json(availableHours);
+    return response.status(200).json(availableHours);
   }
 }
 export { ListAvailableHours };

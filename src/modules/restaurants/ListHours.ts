@@ -12,10 +12,10 @@ class ListHours {
       .where({ restaurant_id });
 
     if (!hours) {
-      return response.status(201).json({ error: 'No hours registered' });
+      return response.status(404).json({ error: 'No hours registered' });
     }
 
-    return response.status(201).json(hours);
+    return response.status(200).json(hours);
   }
 }
 export { ListHours };
