@@ -1,15 +1,13 @@
 import 'dotenv/config';
 import { resolve } from 'path';
-// import pg from 'pg';
-
-// pg.defaults.ssl = process.env.NODE_ENV === 'production';
 
 module.exports = {
   client: 'pg',
   connection: {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
-    database: process.env.DB_NAME,
+    database:
+      process.env.NODE_ENV === 'test' ? 'mesavip-tests' : process.env.DB_NAME,
     password: process.env.DB_PASS,
     ssl:
       process.env.NODE_ENV === 'production'
