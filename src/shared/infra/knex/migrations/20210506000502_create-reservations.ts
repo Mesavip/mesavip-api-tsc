@@ -46,5 +46,5 @@ export async function up(knex: Knex): Promise<void> {
 }
 
 export async function down(knex: Knex): Promise<void> {
-  return knex.schema.dropTable('reservartions');
+  return knex.schema.dropTable('reservations');
 }
