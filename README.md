@@ -11,7 +11,7 @@
 </div>
 <br>
 
-[Mesavip Website](https://mesavip-web.herokuapp.com/)
+[Mesavip Website](https://mesavip.netlify.app/)
 ###### It may take a few seconds to load, due to the Heroku free hosting (Sleeping Dynos 😴).
 
 ###### Personal project for studying and portfolio purposes.
