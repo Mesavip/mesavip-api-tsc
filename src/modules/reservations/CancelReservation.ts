@@ -11,7 +11,7 @@ class CancelReservation {
       .first();
 
     if (!reservation) {
-      return response.status(400).json({ error: 'Reservation does not exist' });
+      return response.status(403).json({ error: 'Reservation does not exist' });
     }
 
     const [canceled] = await query('reservations')
