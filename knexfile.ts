@@ -20,7 +20,7 @@ module.exports = {
   },
   migrations: {
     extension: 'ts',
-    tableName: 'knexmigrations',
+    tableName: 'migrations',
     directory: resolve(
       __dirname,
       process.env.NODE_ENV === 'production' ? 'dist' : '',

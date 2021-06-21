@@ -1,36 +1,32 @@
 import { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
-  return knex.schema.createTable('restaurants', (table) => {
+  return knex.schema.createTable('reservations', (table) => {
     table
-      .uuid('id')
+      .uuid('reservation_id')
       .primary()
       .notNullable()
       .defaultTo(knex.raw('uuid_generate_v4()'));
 
     table
-      .uuid('restaurant_id')
+      .uuid('client_id')
       .notNullable()
-      .unique()
       .references('user_id')
       .inTable('users')
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
     table
-      .uuid('culinary_id')
+      .uuid('restaurant_id')
       .notNullable()
-      .references('culinary_id')
-      .inTable('culinaries')
+      .references('id')
+      .inTable('restaurants')
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
-    table.string('about', 1000).notNullable();
-    table.string('phone').notNullable();
-    table.string('site').notNullable();
-    table.specificType('tables_amount', 'smallint').notNullable();
-    table.time('opening_hour').notNullable();
-    table.time('closing_hour').notNullable();
+    table.date('date').notNullable();
+    table.time('time').notNullable();
+    table.boolean('canceled').nullable();
 
     table
       .timestamp('createdAt')
@@ -44,5 +40,5 @@ export async function up(knex: Knex): Promise<void> {
 }
 
 export async function down(knex: Knex): Promise<void> {
-  return knex.schema.dropTable('restaurants');
+  return knex.schema.dropTable('reservations');
 }

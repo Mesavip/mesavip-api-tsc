@@ -18,11 +18,11 @@ export async function up(knex: Knex): Promise<void> {
     table
       .timestamp('createdAt')
       .notNullable()
-      .defaultTo(new Date().toLocaleString());
+      .defaultTo(knex.raw('transaction_timestamp()'));
     table
       .timestamp('updatedAt')
       .notNullable()
-      .defaultTo(new Date().toLocaleString());
+      .defaultTo(knex.raw('transaction_timestamp()'));
   });
 }
 

@@ -8,24 +8,16 @@ export async function up(knex: Knex): Promise<void> {
       .notNullable()
       .defaultTo(knex.raw('uuid_generate_v4()'));
 
-    table
-      .uuid('restaurant_id')
-      .notNullable()
-      .references('user_id')
-      .inTable('users')
-      .onUpdate('CASCADE')
-      .onDelete('SET NULL');
-
-    table.string('hour').notNullable();
+    table.time('hour').notNullable();
 
     table
       .timestamp('createdAt')
       .notNullable()
-      .defaultTo(new Date().toLocaleString());
+      .defaultTo(knex.raw('transaction_timestamp()'));
     table
       .timestamp('updatedAt')
       .notNullable()
-      .defaultTo(new Date().toLocaleString());
+      .defaultTo(knex.raw('transaction_timestamp()'));
   });
 }
 
