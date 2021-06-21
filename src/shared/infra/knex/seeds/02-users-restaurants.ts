@@ -2,6 +2,8 @@ import bcrypt from 'bcrypt';
 import { Knex } from 'knex';
 import 'dotenv/config';
 
+const now = new Date();
+const date = now.toISOString();
 const restaurant_ids = {
   1: '3eb6cc7e-36f2-49af-b675-902cf3a0df36',
   2: '62667f43-2421-4965-b978-d1f02a22f796',
@@ -29,8 +31,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[2],
@@ -39,8 +41,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 1,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[3],
@@ -49,8 +51,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 2,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[4],
@@ -59,8 +61,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 3,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[5],
@@ -69,8 +71,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 4,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[6],
@@ -79,8 +81,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 5,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[7],
@@ -89,8 +91,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 6,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[8],
@@ -99,8 +101,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 7,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[9],
@@ -109,8 +111,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 8,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[10],
@@ -119,8 +121,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 9,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[11],
@@ -129,8 +131,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 10,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: restaurant_ids[12],
@@ -139,8 +141,8 @@ export async function seed(knex: Knex): Promise<void> {
       cnpj: cnpj + 11,
       type: 'RES',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
   ]);
 }

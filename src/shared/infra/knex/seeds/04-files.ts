@@ -1,5 +1,7 @@
 import { Knex } from 'knex';
 
+const now = new Date();
+const date = now.toISOString();
 const restaurant_ids = {
   1: '3eb6cc7e-36f2-49af-b675-902cf3a0df36',
   2: '62667f43-2421-4965-b978-d1f02a22f796',
@@ -23,8 +25,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[1],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -32,8 +34,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[1],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -41,8 +43,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[1],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -50,8 +52,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[1],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -59,8 +61,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[1],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -68,8 +70,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[1],
       public_id: 'Mesavip/Seeds/glm0d3szecswuxjotabq',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -77,8 +79,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[1],
       public_id: 'Mesavip/Seeds/dhn6okqfxbsimtyqf5ur',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -86,8 +88,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[2],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -95,8 +97,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[2],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -104,8 +106,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[2],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -113,8 +115,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[2],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -122,8 +124,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[2],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -131,8 +133,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[2],
       public_id: 'Mesavip/Seeds/kxpyxf7hucqu62iwi2sk',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -140,8 +142,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[2],
       public_id: 'Mesavip/Seeds/y5vrcmckivckbqgxwwlw',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -149,8 +151,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[3],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -158,8 +160,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[3],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -167,8 +169,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[3],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -176,8 +178,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[3],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -185,8 +187,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[3],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -194,8 +196,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[3],
       public_id: 'Mesavip/Seeds/pkdwo3y3czjy5ufqvhr8',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -203,8 +205,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[3],
       public_id: 'Mesavip/Seeds/us6fb0y3cs4ulp6jhdwz',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -212,8 +214,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[4],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -221,8 +223,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[4],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -230,8 +232,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[4],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -239,8 +241,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[4],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -248,8 +250,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[4],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -257,8 +259,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[4],
       public_id: 'Mesavip/Seeds/npmqrnk4ovsynj8ynwmj',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -266,8 +268,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[4],
       public_id: 'Mesavip/Seeds/df8u0xcof7o4obfhwh2f',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -275,8 +277,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[5],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -284,8 +286,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[5],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -293,8 +295,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[5],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -302,8 +304,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[5],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -311,8 +313,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[5],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -320,8 +322,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[5],
       public_id: 'Mesavip/Seeds/vsbh9nppuvpehjvhflzr',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -329,8 +331,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[5],
       public_id: 'Mesavip/Seeds/hxx2kkku6as4he59vdq5',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -338,8 +340,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[6],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -347,8 +349,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[6],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -356,8 +358,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[6],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -365,8 +367,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[6],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -374,8 +376,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[6],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -383,8 +385,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[6],
       public_id: 'Mesavip/Seeds/i1ghqr1ve6oxl1ohk9n9',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -392,8 +394,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[6],
       public_id: 'Mesavip/Seeds/yokn6sherfh1vz6mhyio',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -401,8 +403,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[7],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -410,8 +412,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[7],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -419,8 +421,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[7],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -428,8 +430,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[7],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -437,8 +439,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[7],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -446,8 +448,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[7],
       public_id: 'Mesavip/Seeds/pdsvepplk8gseuvj9rmi',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -455,8 +457,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[7],
       public_id: 'Mesavip/Seeds/tsdxzz1mhdp7iwfzzti2',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -464,8 +466,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -473,8 +475,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -482,8 +484,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -491,8 +493,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -500,8 +502,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -509,8 +511,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/jcj7nroh9tofczwwo730',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -518,8 +520,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[8],
       public_id: 'Mesavip/Seeds/tkbrcqboi9unej3bncgt',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -527,8 +529,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[9],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -536,8 +538,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[9],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -545,8 +547,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[9],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -554,8 +556,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[9],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -563,8 +565,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[9],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -572,8 +574,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[9],
       public_id: 'Mesavip/Seeds/chaaweagjlnnfluxldbx',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -581,8 +583,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[9],
       public_id: 'Mesavip/Seeds/wf5zysid4a5z5zspr7xj',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -590,8 +592,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[10],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -599,8 +601,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[10],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -608,8 +610,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[10],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -617,8 +619,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[10],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -626,8 +628,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[10],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -635,8 +637,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[10],
       public_id: 'Mesavip/Seeds/invwxkx1qm8lkvxblne8',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -644,8 +646,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[10],
       public_id: 'Mesavip/Seeds/bbaglydg8hqqzsyfugm0',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -653,8 +655,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[11],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -662,8 +664,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[11],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -671,8 +673,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[11],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -680,8 +682,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[11],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -689,8 +691,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[11],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -698,8 +700,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[11],
       public_id: 'Mesavip/Seeds/olgxxzyaggp6buwc9udp',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -707,8 +709,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[11],
       public_id: 'Mesavip/Seeds/oddwxkahfbeojgeco8bb',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -716,8 +718,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[12],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-1',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -725,8 +727,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[12],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-2',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -734,8 +736,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[12],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-3',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -743,8 +745,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[12],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-4',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -752,8 +754,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[12],
       public_id: 'Mesavip/Seeds/Galeria/seed-galeria-5',
       type: 'galeria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -761,8 +763,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[12],
       public_id: 'Mesavip/Seeds/psfjgtrjvtrd5adwkssi',
       type: 'banner',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       path:
@@ -770,8 +772,8 @@ export async function seed(knex: Knex): Promise<void> {
       user_id: restaurant_ids[12],
       public_id: 'Mesavip/Seeds/p5ssrfs0hub4gkb1z2kb',
       type: 'list',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
   ]);
 }

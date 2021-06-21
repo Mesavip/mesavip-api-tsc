@@ -2,6 +2,8 @@ import bcrypt from 'bcrypt';
 import { Knex } from 'knex';
 import 'dotenv/config';
 
+const now = new Date();
+const date = now.toISOString();
 const client_ids = {
   1: '5526406b-9f8f-40fd-ab39-ed9a45d11663',
   2: '73bd4287-5a06-4428-9317-ee44eba124fe',
@@ -27,8 +29,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[2],
@@ -37,8 +39,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 1,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[3],
@@ -47,8 +49,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 2,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[4],
@@ -57,8 +59,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 3,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[5],
@@ -67,8 +69,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 4,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[6],
@@ -77,8 +79,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 5,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[7],
@@ -87,8 +89,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 6,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[8],
@@ -97,8 +99,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 7,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[9],
@@ -107,8 +109,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 8,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       user_id: client_ids[10],
@@ -117,8 +119,8 @@ export async function seed(knex: Knex): Promise<void> {
       cpf: cpf + 9,
       type: 'CLI',
       password_hash,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
   ]);
 }

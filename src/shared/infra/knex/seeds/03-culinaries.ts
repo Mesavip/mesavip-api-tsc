@@ -1,5 +1,7 @@
 import { Knex } from 'knex';
 
+const now = new Date();
+const date = now.toISOString();
 const culinary_ids = {
   1: '6f89d28e-b7bd-4c06-8d12-8dbd1efe1155',
   2: 'af486eb0-6eaa-4d8c-a028-62ed8c9e73f0',
@@ -19,68 +21,68 @@ export async function seed(knex: Knex): Promise<void> {
     {
       culinary_id: culinary_ids[1],
       name: 'Brasileira',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[2],
       name: 'Americana',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[3],
       name: 'Vegana',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[4],
       name: 'Vegetariana',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[5],
       name: 'Mineira',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[6],
       name: 'Baiana',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[7],
       name: 'Indiana',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[8],
       name: 'Japonesa',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[9],
       name: 'Italiana',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[10],
       name: 'Chinesa',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       culinary_id: culinary_ids[11],
       name: 'Churrascaria',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
   ]);
 }

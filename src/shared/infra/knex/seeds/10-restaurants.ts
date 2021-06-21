@@ -1,7 +1,13 @@
 import { Knex } from 'knex';
 
+const now = new Date();
+const date = now.toISOString();
+
 const site = 'https://restaurant.com';
 const phone = '(11) 93123-4566';
+const tables_amount = 5;
+const opening_hour = '20:00:00';
+const closing_hour = '23:00:00';
 const restaurant_ids = {
   1: '3eb6cc7e-36f2-49af-b675-902cf3a0df36',
   2: '62667f43-2421-4965-b978-d1f02a22f796',
@@ -16,7 +22,6 @@ const restaurant_ids = {
   11: '988a11ee-dbd2-4e1a-b86a-879b8666a9dc',
   12: '1b5c10f3-0ce3-49f5-bf1a-9dab7dad59bd',
 };
-
 const culinary_ids = {
   1: '6f89d28e-b7bd-4c06-8d12-8dbd1efe1155',
   2: 'af486eb0-6eaa-4d8c-a028-62ed8c9e73f0',
@@ -39,8 +44,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[1],
       culinary_id: culinary_ids[1],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Housed in a National Historic Building, c.1835, and in business since 1981, Café Vermilionville is a locally-owned, award-winning culinary establishment that serves innovative, upscale creole fare.`,
@@ -48,8 +56,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[2],
       culinary_id: culinary_ids[2],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Our Italian menu features a variety of dishes made from the freshest ingredients to provide our diners with an authentic Italian meal. From pizzas and calzones to fish and filet mignon, we provide something for every taste, craving and budget.`,
@@ -57,8 +68,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[3],
       culinary_id: culinary_ids[3],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Ruth's Chris Steak House in Lafayette, LA serves the finest USDA Prime beef available, broiled at 1,800° and served on 500° plates, so your steak stays hot, juicy and delicious from first bite to last.`,
@@ -66,8 +80,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[4],
       culinary_id: culinary_ids[4],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Be real. Eat good. It"s all about being true to who you are: sharing with friends and family and enjoying each other's company over a good meal. The ingredients are always fresh and that is the cornerstone of our farm to table approach.`,
@@ -75,8 +92,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[5],
       culinary_id: culinary_ids[4],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Twin Peaks is an American sports bar and restaurant. The restaurant embodies everything about the classic sports bar. There are high definitions on virtually every wall, ensuring that every guest has a great view of the game.`,
@@ -84,8 +104,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[6],
       culinary_id: culinary_ids[5],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Housed in a National Historic Building, c.1835, and in business since 1981, Café Vermilionville is a locally-owned, award-winning culinary establishment that serves innovative, upscale creole fare.`,
@@ -93,8 +116,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[7],
       culinary_id: culinary_ids[6],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Our Italian menu features a variety of dishes made from the freshest ingredients to provide our diners with an authentic Italian meal. From pizzas and calzones to fish and filet mignon, we provide something for every taste, craving and budget.`,
@@ -102,8 +128,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[8],
       culinary_id: culinary_ids[7],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Ruth's Chris Steak House in Lafayette, LA serves the finest USDA Prime beef available, broiled at 1,800° and served on 500° plates, so your steak stays hot, juicy and delicious from first bite to last.`,
@@ -111,8 +140,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[9],
       culinary_id: culinary_ids[8],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Be real. Eat good. It"s all about being true to who you are: sharing with friends and family and enjoying each other's company over a good meal. The ingredients are always fresh and that is the cornerstone of our farm to table approach.`,
@@ -120,8 +152,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[10],
       culinary_id: culinary_ids[9],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Twin Peaks is an American sports bar and restaurant. The restaurant embodies everything about the classic sports bar. There are high definitions on virtually every wall, ensuring that every guest has a great view of the game.`,
@@ -129,8 +164,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[11],
       culinary_id: culinary_ids[10],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
     {
       about: `Housed in a National Historic Building, c.1835, and in business since 1981, Café Vermilionville is a locally-owned, award-winning culinary establishment that serves innovative, upscale creole fare.`,
@@ -138,8 +176,11 @@ export async function seed(knex: Knex): Promise<void> {
       site,
       restaurant_id: restaurant_ids[12],
       culinary_id: culinary_ids[11],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      tables_amount,
+      opening_hour,
+      closing_hour,
+      createdAt: date,
+      updatedAt: date,
     },
   ]);
 }

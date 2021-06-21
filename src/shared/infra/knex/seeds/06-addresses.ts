@@ -1,5 +1,7 @@
 import { Knex } from 'knex';
 
+const now = new Date();
+const date = now.toISOString();
 const restaurant_ids = {
   1: '3eb6cc7e-36f2-49af-b675-902cf3a0df36',
   2: '62667f43-2421-4965-b978-d1f02a22f796',
@@ -25,8 +27,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Rua Governador Tibério Nunes',
       numero: '56',
       user_id: restaurant_ids[1],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Nossa Senhora das Graças',
@@ -36,8 +38,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Rua Doutor Area Leão',
       numero: '61',
       user_id: restaurant_ids[2],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Vila Matilde',
@@ -47,8 +49,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Praça Dom Duarte Leopoldo',
       numero: '15',
       user_id: restaurant_ids[3],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Vila Mariana',
@@ -58,8 +60,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Praça Octacílio Pereira',
       numero: '68',
       user_id: restaurant_ids[4],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Campo Grande',
@@ -69,8 +71,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Praça Largo do Peixe',
       numero: '89',
       user_id: restaurant_ids[5],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Santo Amaro',
@@ -80,8 +82,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Praça Rui Corá',
       numero: '23',
       user_id: restaurant_ids[6],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Moema',
@@ -91,8 +93,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Rua Adauto de Assis',
       numero: '39',
       user_id: restaurant_ids[7],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Pinheiros',
@@ -102,8 +104,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Rua Amaro Bezerra Cavalcanti',
       numero: '78',
       user_id: restaurant_ids[8],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Raposo Tavares',
@@ -113,8 +115,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Rua Antônio de Souza Campos',
       numero: '16',
       user_id: restaurant_ids[9],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Tucuruvi',
@@ -124,8 +126,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Rua Benedita Galdino Coelho',
       numero: '84',
       user_id: restaurant_ids[10],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Vila Prudente',
@@ -135,8 +137,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Rua Dom João Maria Ogno',
       numero: '59',
       user_id: restaurant_ids[11],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
     {
       bairro: 'Penha',
@@ -146,8 +148,8 @@ export async function seed(knex: Knex): Promise<void> {
       logradouro: 'Rua Doutor Edgar Garcia Vieira	',
       numero: '28',
       user_id: restaurant_ids[12],
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: date,
+      updatedAt: date,
     },
   ]);
 }
