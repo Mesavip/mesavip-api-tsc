@@ -18,7 +18,7 @@ resevationsRoutes.delete(
 );
 resevationsRoutes.get('/list', ensureAuthenticated, listReservations.execute);
 resevationsRoutes.post(
-  '/create/:restaurant_id/:hour_id/:date',
+  '/create',
   ensureAuthenticated,
   createReservations.execute
 );

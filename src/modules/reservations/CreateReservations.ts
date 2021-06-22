@@ -4,35 +4,31 @@ import query from '../../shared/infra/knex/knex';
 
 class CreateReservations {
   async execute(request: Request, response: Response): Promise<Response> {
-    const { date, hour_id, restaurant_id } = request.params;
+    const { date, time, restaurant_id } = request.body;
     const { id: client_id } = request.user;
 
-    const table = await query
-      .select('table_id')
-      .from({ t: 'tables' })
-      .whereNotExists(
-        query({
-          r: 'reservations',
-        }).whereRaw(
-          `r.table_id = t.table_id AND r.hour_id = ? AND r.date = ?`,
-          [hour_id, date]
-        )
-      )
-      .andWhere({ 't.restaurant_id': restaurant_id })
+    const { tables_amount } = await query('restaurants')
+      .select(['tables_amount'])
+      .where({ id: restaurant_id })
       .first();
 
-    if (!table) {
-      return response.status(403).json({ error: 'Reservation not available' });
-    }
+    const reservations = await query
+      .select(['r.reservation_id'])
+      .from({ r: 'reservations' })
+      .innerJoin('restaurants', 'r.restaurant_id', 'restaurants.id')
+      .where({ 'r.restaurant_id': restaurant_id, date, time })
+      .limit(tables_amount);
 
-    const { table_id }: any = table;
+    if (reservations.length === tables_amount) {
+      return response.status(404).json({ error: 'Reservation not available' });
+    }
 
     const [reservation_id] = await query('reservations')
       .insert({
         date,
-        hour_id,
+        time,
         client_id,
-        table_id,
+        restaurant_id,
       })
       .returning(['reservation_id']);
 

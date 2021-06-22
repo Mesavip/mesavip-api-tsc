@@ -4,14 +4,14 @@ import request from 'supertest';
 import { app } from '../../../shared/infra/http/app';
 import query from '../../../shared/infra/knex/knex';
 
-const restaurant_id = '3eb6cc7e-36f2-49af-b675-902cf3a0df36';
-const hour_id = '6144d7d9-543a-44b0-98e2-5874109b60dd';
+const restaurant_id = 'feb8dfc9-de5f-4c42-b7d9-da42a258b9a8';
 const newDate = new Date();
-const date = newDate.toISOString();
+const time = '23:45';
+const date = newDate.toDateString();
 
 describe('Create a reservation', () => {
   beforeEach(async () => {
-    query('reservations').delete();
+    await query('reservations').delete();
 
     const user = {
       name: 'client',
@@ -36,7 +36,8 @@ describe('Create a reservation', () => {
       .then((response) => response.body);
 
     await request(app)
-      .post(`/reservations/create/${restaurant_id}/${hour_id}/${date}`)
+      .post('/reservations/create')
+      .send({ restaurant_id, date, time })
       .set({ Authorization: `Bearer ${token}` })
       .expect(201);
   });
@@ -59,7 +60,8 @@ describe('Create a reservation', () => {
 
     do {
       response = request(app)
-        .post(`/reservations/create/${restaurant_id}/${hour_id}/${date}`)
+        .post('/reservations/create')
+        .send({ restaurant_id, date, time })
         .set({ Authorization: `Bearer ${token}` })
         .then((response) => response.status);
     } while ((await response) === 201);
@@ -68,8 +70,9 @@ describe('Create a reservation', () => {
     // and time, the request below should return a 403, since it couldn't reserve
 
     await request(app)
-      .post(`/reservations/create/${restaurant_id}/${hour_id}/${date}`)
+      .post('/reservations/create')
+      .send({ restaurant_id, date, time })
       .set({ Authorization: `Bearer ${token}` })
-      .expect(403);
+      .expect(404);
   });
 });
