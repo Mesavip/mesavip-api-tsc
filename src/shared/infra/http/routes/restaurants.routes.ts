@@ -21,7 +21,7 @@ restaurantsRoutes.get('/ratings/:restaurant_id', listRatings.execute);
 restaurantsRoutes.get('/hours/:restaurant_id', listHours.execute);
 
 restaurantsRoutes.get(
-  '/tables/available/:restaurant_id/:date',
+  '/available-hours/:restaurant_id/:date',
   listAvailableHours.execute
 );
 

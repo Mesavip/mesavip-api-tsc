@@ -4,6 +4,8 @@ const now = new Date();
 const date = now.toISOString();
 // add the rest later
 const hours = [
+  '19:30:00',
+  '19:45:00',
   '20:00:00',
   '20:15:00',
   '20:30:00',
@@ -17,6 +19,9 @@ const hours = [
   '22:30:00',
   '22:45:00',
   '23:00:00',
+  '23:15:00',
+  '23:30:00',
+  '23:45:00',
 ];
 
 export async function seed(knex: Knex): Promise<void> {
