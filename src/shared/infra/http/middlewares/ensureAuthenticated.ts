@@ -7,7 +7,6 @@ import authConfig from '../../../../config/auth';
 
 interface IPayload {
   userId: string;
-  userType: string;
 }
 
 export async function ensureAuthenticated(
@@ -27,11 +26,10 @@ export async function ensureAuthenticated(
   try {
     const decoded = verify(token, secret_key);
 
-    const { userId, userType } = decoded as IPayload;
+    const { userId } = decoded as IPayload;
 
     request.user = {
       id: userId,
-      type: userType,
     };
 
     next();

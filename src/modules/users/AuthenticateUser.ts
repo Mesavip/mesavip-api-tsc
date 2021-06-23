@@ -10,7 +10,6 @@ interface IResponse {
   user: {
     name: string;
     email: string;
-    type: string;
   };
 }
 
@@ -33,21 +32,16 @@ class AuthenticateUser {
       return response.status(401).json({ error: 'Invalid email or password' });
     }
 
-    const token = sign(
-      { userId: user.user_id, userType: user.type },
-      secret_key,
-      {
-        subject: user.user_id,
-        expiresIn,
-      }
-    );
+    const token = sign({ userId: user.id }, secret_key, {
+      subject: user.id,
+      expiresIn,
+    });
 
     const returnToken: IResponse = {
       token,
       user: {
         name: user.name,
         email: user.email,
-        type: user.type,
       },
     };
 

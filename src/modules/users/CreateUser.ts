@@ -26,7 +26,6 @@ class CreateUser {
       name,
       email,
       cpf,
-      type: 'CLI',
       password_hash,
     });
 
