@@ -10,8 +10,7 @@ export async function up(knex: Knex): Promise<void> {
 
     table.string('name').notNullable();
     table.string('email').unique().notNullable();
-    table.string('cpf').unique().nullable();
-    table.string('type').notNullable();
+    table.string('cpf').unique().notNullable();
     table.string('password_hash').notNullable();
 
     table

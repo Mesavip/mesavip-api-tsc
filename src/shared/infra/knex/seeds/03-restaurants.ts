@@ -1,5 +1,8 @@
+import bcrypt from 'bcrypt';
 import { Knex } from 'knex';
 
+const password_hash = bcrypt.hashSync('123456', 8);
+const cnpj = '12345678900';
 const site = 'https://restaurant.com';
 const phone = '(11) 93123-4566';
 const tables_amount = 5;
@@ -37,6 +40,10 @@ export async function seed(knex: Knex): Promise<void> {
   await knex('restaurants').insert([
     {
       id: restaurant_ids[1],
+      name: 'Comida Mineira',
+      email: 'comidamineira@gmail.com',
+      password_hash,
+      cnpj,
       about: `At Our Restaurant we specialize in true Italian cooking. We use the freshest ingredients that reflect authentic Sicilian cuisine with a touch of Northern Italy. Shop our retail section to pair the perfect wine with your meal.`,
       phone,
       site,
@@ -47,6 +54,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[2],
+      name: 'Carnes Brasil',
+      email: 'carnesbrasil@gmail.com',
+      password_hash,
+      cnpj: cnpj + 1,
       about: `Housed in a National Historic Building, c.1835, and in business since 1981, Café Vermilionville is a locally-owned, award-winning culinary establishment that serves innovative, upscale creole fare.`,
       phone,
       site,
@@ -57,6 +68,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[3],
+      name: 'Esfirra do Gil',
+      email: 'rogerio@gmail.com',
+      password_hash,
+      cnpj: cnpj + 2,
       about: `Our Italian menu features a variety of dishes made from the freshest ingredients to provide our diners with an authentic Italian meal. From pizzas and calzones to fish and filet mignon, we provide something for every taste, craving and budget.`,
       phone,
       site,
@@ -67,6 +82,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[4],
+      name: 'Bar do Chico Lopes',
+      email: 'chicolopes@gmail.com',
+      password_hash,
+      cnpj: cnpj + 3,
       about: `Ruth's Chris Steak House in Lafayette, LA serves the finest USDA Prime beef available, broiled at 1,800° and served on 500° plates, so your steak stays hot, juicy and delicious from first bite to last.`,
       phone,
       site,
@@ -77,6 +96,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[5],
+      name: 'Padoca do Marcola',
+      email: 'padocadomarcola@gmail.com',
+      password_hash,
+      cnpj: cnpj + 4,
       about: `Be real. Eat good. It"s all about being true to who you are: sharing with friends and family and enjoying each other's company over a good meal. The ingredients are always fresh and that is the cornerstone of our farm to table approach.`,
       phone,
       site,
@@ -87,6 +110,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[6],
+      name: 'Hamburgueria Novo Sabor',
+      email: 'hamburguerianovosabor@gmail.com',
+      password_hash,
+      cnpj: cnpj + 5,
       about: `Twin Peaks is an American sports bar and restaurant. The restaurant embodies everything about the classic sports bar. There are high definitions on virtually every wall, ensuring that every guest has a great view of the game.`,
       phone,
       site,
@@ -97,6 +124,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[7],
+      name: 'Cantinho do sul',
+      email: 'cantinhodosul@gmail.com',
+      password_hash,
+      cnpj: cnpj + 6,
       about: `Housed in a National Historic Building, c.1835, and in business since 1981, Café Vermilionville is a locally-owned, award-winning culinary establishment that serves innovative, upscale creole fare.`,
       phone,
       site,
@@ -107,6 +138,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[8],
+      name: 'Nordeste com você',
+      email: 'nordestecomvoce@gmail.com',
+      password_hash,
+      cnpj: cnpj + 7,
       about: `Our Italian menu features a variety of dishes made from the freshest ingredients to provide our diners with an authentic Italian meal. From pizzas and calzones to fish and filet mignon, we provide something for every taste, craving and budget.`,
       phone,
       site,
@@ -117,6 +152,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[9],
+      name: 'Bar do Juca',
+      email: 'bardojuca@gmail.com',
+      password_hash,
+      cnpj: cnpj + 8,
       about: `Ruth's Chris Steak House in Lafayette, LA serves the finest USDA Prime beef available, broiled at 1,800° and served on 500° plates, so your steak stays hot, juicy and delicious from first bite to last.`,
       phone,
       site,
@@ -127,6 +166,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[10],
+      name: 'Luffy Picanharia',
+      email: 'gangstergastino@gmail.com',
+      password_hash,
+      cnpj: cnpj + 9,
       about: `Be real. Eat good. It"s all about being true to who you are: sharing with friends and family and enjoying each other's company over a good meal. The ingredients are always fresh and that is the cornerstone of our farm to table approach.`,
       phone,
       site,
@@ -137,6 +180,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[11],
+      name: 'Mercadinho do Docs',
+      email: 'crissytirocerto@gmail.com',
+      password_hash,
+      cnpj: cnpj + 10,
       about: `Twin Peaks is an American sports bar and restaurant. The restaurant embodies everything about the classic sports bar. There are high definitions on virtually every wall, ensuring that every guest has a great view of the game.`,
       phone,
       site,
@@ -147,6 +194,10 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: restaurant_ids[12],
+      name: 'Burger Queen',
+      email: 'burgerqueen@gmail.com',
+      password_hash,
+      cnpj: cnpj + 11,
       about: `Housed in a National Historic Building, c.1835, and in business since 1981, Café Vermilionville is a locally-owned, award-winning culinary establishment that serves innovative, upscale creole fare.`,
       phone,
       site,

@@ -1,7 +1,7 @@
 import { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
-  return knex.schema.createTable('rates', (table) => {
+  return knex.schema.createTable('ratings', (table) => {
     table
       .uuid('id')
       .primary()
@@ -24,7 +24,7 @@ export async function up(knex: Knex): Promise<void> {
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
-    table.specificType('rate', 'smallint').unsigned().nullable();
+    table.specificType('rating', 'smallint').unsigned().nullable();
     table.string('comment', 1000).unsigned().notNullable();
 
     table

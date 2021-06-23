@@ -1,9 +1,6 @@
 import bcrypt from 'bcrypt';
 import { Knex } from 'knex';
-import 'dotenv/config';
 
-// const now = new Date();
-// const date = now.toISOString();
 const client_ids = {
   1: '5526406b-9f8f-40fd-ab39-ed9a45d11663',
   2: '73bd4287-5a06-4428-9317-ee44eba124fe',
@@ -27,7 +24,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Daniel Marques',
       email: 'daniel@gmail.com',
       cpf,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -35,7 +31,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Neymar Junior',
       email: 'neymar@gmail.com',
       cpf: cpf + 1,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -43,7 +38,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Cristiano Ronaldo',
       email: 'ronaldo@gmail.com',
       cpf: cpf + 2,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -51,7 +45,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Linus Torvalds',
       email: 'linus@gmail.com',
       cpf: cpf + 3,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -59,7 +52,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Antonio Carlos',
       email: 'antonio@gmail.com',
       cpf: cpf + 4,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -67,7 +59,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Claudia Marques',
       email: 'claudia@gmail.com',
       cpf: cpf + 5,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -75,7 +66,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Hercilia Amaral',
       email: 'cilu@gmail.com',
       cpf: cpf + 6,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -83,7 +73,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Marco Tomas',
       email: 'tomas@gmail.com',
       cpf: cpf + 7,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -91,7 +80,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Iracy Albuquerque',
       email: 'iracy@gmail.com',
       cpf: cpf + 8,
-      type: 'CLI',
       password_hash,
     },
     {
@@ -99,7 +87,6 @@ export async function seed(knex: Knex): Promise<void> {
       name: 'Yolanda Miranda',
       email: 'yolanda@gmail.com',
       cpf: cpf + 9,
-      type: 'CLI',
       password_hash,
     },
   ]);

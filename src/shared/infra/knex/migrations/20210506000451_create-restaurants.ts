@@ -16,6 +16,10 @@ export async function up(knex: Knex): Promise<void> {
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
+    table.string('name').notNullable();
+    table.string('email').unique().notNullable();
+    table.string('cnpj').unique().notNullable();
+    table.string('password_hash').notNullable();
     table.string('about', 1000).notNullable();
     table.string('phone').notNullable();
     table.string('site').notNullable();
