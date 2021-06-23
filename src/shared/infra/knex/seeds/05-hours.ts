@@ -1,8 +1,5 @@
 import { Knex } from 'knex';
 
-const now = new Date();
-const date = now.toISOString();
-// add the rest later
 const hours = [
   '19:30:00',
   '19:45:00',
@@ -28,68 +25,57 @@ export async function seed(knex: Knex): Promise<void> {
   await knex('hours').insert([
     {
       hour: hours[0],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[1],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[2],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[3],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[4],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[5],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[6],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[7],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[8],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[9],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[10],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[11],
-      createdAt: date,
-      updatedAt: date,
     },
     {
       hour: hours[12],
-      createdAt: date,
-      updatedAt: date,
+    },
+    {
+      hour: hours[13],
+    },
+    {
+      hour: hours[14],
+    },
+    {
+      hour: hours[15],
+    },
+    {
+      hour: hours[16],
+    },
+    {
+      hour: hours[17],
     },
   ]);
 }

@@ -3,28 +3,29 @@ import { Knex } from 'knex';
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('rates', (table) => {
     table
-      .uuid('rate_id')
+      .uuid('id')
       .primary()
       .notNullable()
       .defaultTo(knex.raw('uuid_generate_v4()'));
 
     table
-      .uuid('restaurant_id')
+      .uuid('client_id')
       .notNullable()
-      .references('user_id')
+      .references('id')
       .inTable('users')
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
     table
-      .uuid('client_id')
+      .uuid('restaurant_id')
       .notNullable()
-      .references('user_id')
-      .inTable('users')
+      .references('id')
+      .inTable('restaurants')
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
-    table.integer('rate').unsigned().notNullable();
+    table.specificType('rate', 'smallint').unsigned().nullable();
+    table.string('comment', 1000).unsigned().notNullable();
 
     table
       .timestamp('createdAt')

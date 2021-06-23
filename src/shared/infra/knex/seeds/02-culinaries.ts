@@ -1,7 +1,5 @@
 import { Knex } from 'knex';
 
-const now = new Date();
-const date = now.toISOString();
 const culinary_ids = {
   1: '6f89d28e-b7bd-4c06-8d12-8dbd1efe1155',
   2: 'af486eb0-6eaa-4d8c-a028-62ed8c9e73f0',
@@ -19,70 +17,48 @@ const culinary_ids = {
 export async function seed(knex: Knex): Promise<void> {
   await knex('culinaries').insert([
     {
-      culinary_id: culinary_ids[1],
+      id: culinary_ids[1],
       name: 'Brasileira',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[2],
+      id: culinary_ids[2],
       name: 'Americana',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[3],
+      id: culinary_ids[3],
       name: 'Vegana',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[4],
+      id: culinary_ids[4],
       name: 'Vegetariana',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[5],
+      id: culinary_ids[5],
       name: 'Mineira',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[6],
+      id: culinary_ids[6],
       name: 'Baiana',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[7],
+      id: culinary_ids[7],
       name: 'Indiana',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[8],
+      id: culinary_ids[8],
       name: 'Japonesa',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[9],
+      id: culinary_ids[9],
       name: 'Italiana',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[10],
+      id: culinary_ids[10],
       name: 'Chinesa',
-      createdAt: date,
-      updatedAt: date,
     },
     {
-      culinary_id: culinary_ids[11],
+      id: culinary_ids[11],
       name: 'Churrascaria',
-      createdAt: date,
-      updatedAt: date,
     },
   ]);
 }

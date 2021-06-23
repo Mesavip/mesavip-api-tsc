@@ -3,7 +3,7 @@ import { Knex } from 'knex';
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('reservations', (table) => {
     table
-      .uuid('reservation_id')
+      .uuid('id')
       .primary()
       .notNullable()
       .defaultTo(knex.raw('uuid_generate_v4()'));
@@ -11,7 +11,7 @@ export async function up(knex: Knex): Promise<void> {
     table
       .uuid('client_id')
       .notNullable()
-      .references('user_id')
+      .references('id')
       .inTable('users')
       .onUpdate('CASCADE')
       .onDelete('SET NULL');

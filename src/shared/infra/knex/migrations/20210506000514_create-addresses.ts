@@ -3,16 +3,16 @@ import { Knex } from 'knex';
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('addresses', (table) => {
     table
-      .uuid('address_id')
+      .uuid('id')
       .primary()
       .notNullable()
       .defaultTo(knex.raw('uuid_generate_v4()'));
 
     table
-      .uuid('user_id')
+      .uuid('restaurant_id')
       .notNullable()
-      .references('user_id')
-      .inTable('users')
+      .references('id')
+      .inTable('restaurants')
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 

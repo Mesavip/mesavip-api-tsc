@@ -1,7 +1,5 @@
 import { Knex } from 'knex';
 
-const now = new Date();
-const date = now.toISOString();
 const restaurant_ids = {
   1: '3eb6cc7e-36f2-49af-b675-902cf3a0df36',
   2: '62667f43-2421-4965-b978-d1f02a22f796',
@@ -26,9 +24,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '64014-050',
       logradouro: 'Rua Governador Tibério Nunes',
       numero: '56',
-      user_id: restaurant_ids[1],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[1],
     },
     {
       bairro: 'Nossa Senhora das Graças',
@@ -37,9 +33,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '64016-700',
       logradouro: 'Rua Doutor Area Leão',
       numero: '61',
-      user_id: restaurant_ids[2],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[2],
     },
     {
       bairro: 'Vila Matilde',
@@ -48,9 +42,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03511-060',
       logradouro: 'Praça Dom Duarte Leopoldo',
       numero: '15',
-      user_id: restaurant_ids[3],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[3],
     },
     {
       bairro: 'Vila Mariana',
@@ -59,9 +51,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03511-060',
       logradouro: 'Praça Octacílio Pereira',
       numero: '68',
-      user_id: restaurant_ids[4],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[4],
     },
     {
       bairro: 'Campo Grande',
@@ -70,9 +60,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03514-060',
       logradouro: 'Praça Largo do Peixe',
       numero: '89',
-      user_id: restaurant_ids[5],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[5],
     },
     {
       bairro: 'Santo Amaro',
@@ -81,9 +69,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03511-060',
       logradouro: 'Praça Rui Corá',
       numero: '23',
-      user_id: restaurant_ids[6],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[6],
     },
     {
       bairro: 'Moema',
@@ -92,9 +78,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03511-060',
       logradouro: 'Rua Adauto de Assis',
       numero: '39',
-      user_id: restaurant_ids[7],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[7],
     },
     {
       bairro: 'Pinheiros',
@@ -103,9 +87,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '01512-050',
       logradouro: 'Rua Amaro Bezerra Cavalcanti',
       numero: '78',
-      user_id: restaurant_ids[8],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[8],
     },
     {
       bairro: 'Raposo Tavares',
@@ -114,9 +96,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03212-050',
       logradouro: 'Rua Antônio de Souza Campos',
       numero: '16',
-      user_id: restaurant_ids[9],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[9],
     },
     {
       bairro: 'Tucuruvi',
@@ -125,9 +105,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03512-250',
       logradouro: 'Rua Benedita Galdino Coelho',
       numero: '84',
-      user_id: restaurant_ids[10],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[10],
     },
     {
       bairro: 'Vila Prudente',
@@ -136,9 +114,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03512-050',
       logradouro: 'Rua Dom João Maria Ogno',
       numero: '59',
-      user_id: restaurant_ids[11],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[11],
     },
     {
       bairro: 'Penha',
@@ -147,9 +123,7 @@ export async function seed(knex: Knex): Promise<void> {
       cep: '03515-100',
       logradouro: 'Rua Doutor Edgar Garcia Vieira	',
       numero: '28',
-      user_id: restaurant_ids[12],
-      createdAt: date,
-      updatedAt: date,
+      restaurant_id: restaurant_ids[12],
     },
   ]);
 }

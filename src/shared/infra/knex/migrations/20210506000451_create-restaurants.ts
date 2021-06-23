@@ -9,18 +9,9 @@ export async function up(knex: Knex): Promise<void> {
       .defaultTo(knex.raw('uuid_generate_v4()'));
 
     table
-      .uuid('restaurant_id')
-      .notNullable()
-      .unique()
-      .references('user_id')
-      .inTable('users')
-      .onUpdate('CASCADE')
-      .onDelete('SET NULL');
-
-    table
       .uuid('culinary_id')
       .notNullable()
-      .references('culinary_id')
+      .references('id')
       .inTable('culinaries')
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
