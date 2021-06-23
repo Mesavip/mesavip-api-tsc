@@ -13,7 +13,7 @@ class CreateReservations {
       .first();
 
     const reservations = await query
-      .select(['r.reservation_id'])
+      .select(['r.id'])
       .from({ r: 'reservations' })
       .innerJoin('restaurants', 'r.restaurant_id', 'restaurants.id')
       .where({ 'r.restaurant_id': restaurant_id, date, time })
@@ -23,16 +23,16 @@ class CreateReservations {
       return response.status(404).json({ error: 'Reservation not available' });
     }
 
-    const [reservation_id] = await query('reservations')
+    const [id] = await query('reservations')
       .insert({
         date,
         time,
         client_id,
         restaurant_id,
       })
-      .returning(['reservation_id']);
+      .returning(['id']);
 
-    return response.status(201).json(reservation_id);
+    return response.status(201).json({ reservation_id: id });
   }
 }
 export { CreateReservations };
