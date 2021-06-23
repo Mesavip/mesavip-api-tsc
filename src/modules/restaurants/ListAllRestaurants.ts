@@ -6,27 +6,21 @@ class ListAllRestaurants {
   async execute(request: Request, response: Response): Promise<Response> {
     const restaurants = await query
       .select([
-        'u.user_id as id',
-        'u.name',
+        'r.id',
+        'r.name',
         'c.name as culinary',
         'a.bairro',
-        'f.path',
-        query.raw('cast(avg(rates.rate) as decimal(10,1)) as average_rate'),
+        'f.path as image',
+        query.raw('cast(avg(rat.rating) as decimal(10,1)) as avg_rating'),
       ])
-      .from({ u: 'users' })
-      .innerJoin({ r: 'restaurants' }, 'u.user_id', 'r.restaurant_id')
-      .innerJoin({ c: 'culinaries' }, 'c.culinary_id', 'r.culinary_id')
-      .innerJoin({ a: 'addresses' }, 'a.user_id', 'r.restaurant_id')
-      .innerJoin({ f: 'files' }, 'u.user_id', 'f.user_id')
-      .innerJoin('rates', 'rates.restaurant_id', 'r.restaurant_id')
+      .from({ r: 'restaurants' })
+      .innerJoin({ c: 'culinaries' }, 'c.id', 'r.culinary_id')
+      .innerJoin({ a: 'addresses' }, 'a.restaurant_id', 'r.id')
+      .innerJoin({ f: 'files' }, 'r.id', 'f.restaurant_id')
+      .innerJoin({ rat: 'ratings' }, 'rat.restaurant_id', 'r.id')
       .where({ 'f.type': 'list' })
-      .groupBy([
-        'u.user_id',
-        'r.id',
-        'f.file_id',
-        'c.culinary_id',
-        'a.address_id',
-      ]);
+      .groupBy(['r.id', 'f.id', 'c.id', 'a.id']);
+
     if (!restaurants.length) {
       return response.status(404).json({ error: 'Restaurants not found' });
     }
