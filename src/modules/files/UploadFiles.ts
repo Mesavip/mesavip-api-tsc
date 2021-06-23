@@ -10,7 +10,7 @@ import query from '../../shared/infra/knex/knex';
 class UploadFiles {
   async execute(request: Request, response: Response): Promise<Response> {
     const { type, transformation } = request.body;
-    const { id: user_id } = request.user;
+    const { id: restaurant_id } = request.user;
     const { tempFilePath } = (request as any).files.file;
 
     // Clean tmp folder
@@ -37,7 +37,7 @@ class UploadFiles {
     await query('files').insert({
       path: secure_url,
       public_id,
-      user_id,
+      restaurant_id,
       type,
     });
 

@@ -7,9 +7,9 @@ class ListFiles {
     const { restaurant_id, type } = request.params;
 
     const files = await query
-      .select(['file_id as id', 'path'])
+      .select(['id', 'path'])
       .from('files')
-      .where({ user_id: restaurant_id, type });
+      .where({ restaurant_id, type });
 
     if (!files.length) {
       return response.status(401).json({ error: 'files not found' });

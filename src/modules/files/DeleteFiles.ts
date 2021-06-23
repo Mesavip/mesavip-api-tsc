@@ -13,7 +13,7 @@ class DeleteFiles {
       .select('public_id', 'type')
       .from('files')
       .where({
-        user_id: restaurant_id,
+        restaurant_id,
       })
       .andWhere(function () {
         if (type === 'galeria') {
@@ -36,7 +36,7 @@ class DeleteFiles {
 
     await query('files')
       .whereIn('public_id', filesToBeDeleted)
-      .andWhere({ user_id: restaurant_id })
+      .andWhere({ restaurant_id })
       .delete();
 
     return response.status(201).send();
