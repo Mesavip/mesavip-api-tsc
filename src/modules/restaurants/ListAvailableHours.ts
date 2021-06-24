@@ -12,7 +12,7 @@ class ListAvailableHours {
       .first();
 
     const availableHours = await query
-      .select(query.raw(`to_char(h.hour, 'HH24:MI') as hour`))
+      .select('h.id', query.raw(`to_char(h.hour, 'HH24:MI') as hour`))
       .from({ h: 'hours' })
       .whereNotIn('h.hour', function () {
         this.select('r.time')

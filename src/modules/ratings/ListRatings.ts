@@ -18,10 +18,8 @@ class ListRatings {
       .innerJoin({ client: 'users' }, 'client.id', 'r.client_id')
       .where({
         'r.restaurant_id': restaurant_id,
-      })
-      .first();
-
-    if (!ratings) {
+      });
+    if (!ratings.length) {
       return response.status(404).json({ error: 'No ratings were found' });
     }
 
