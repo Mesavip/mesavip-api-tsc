@@ -19,7 +19,7 @@ module.exports = {
     max: 10,
   },
   migrations: {
-    extension: 'ts',
+    extension: 'ts,js',
     tableName: 'migrations',
     directory: resolve(
       __dirname,
