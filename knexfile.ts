@@ -6,8 +6,7 @@ module.exports = {
   connection: {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
-    database:
-      process.env.NODE_ENV === 'test' ? 'mesavip-tests' : process.env.DB_NAME,
+    database: process.env.DB_NAME,
     password: process.env.DB_PASS,
     ssl:
       process.env.NODE_ENV === 'production'
@@ -19,7 +18,7 @@ module.exports = {
     max: 10,
   },
   migrations: {
-    extension: 'ts,js',
+    extension: 'ts',
     tableName: 'migrations',
     directory: resolve(
       __dirname,
