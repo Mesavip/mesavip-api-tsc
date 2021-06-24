@@ -7,7 +7,7 @@ class CancelReservation {
     const { reservation_id } = request.params;
 
     const reservation = await query('reservations')
-      .where({ reservation_id })
+      .where({ id: reservation_id })
       .first();
 
     if (!reservation) {
@@ -16,7 +16,7 @@ class CancelReservation {
 
     const [canceled] = await query('reservations')
       .update({ canceled: true })
-      .where({ reservation_id })
+      .where({ id: reservation_id })
       .returning(['canceled']);
 
     return response.status(200).json(canceled);

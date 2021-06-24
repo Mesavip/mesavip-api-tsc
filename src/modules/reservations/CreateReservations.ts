@@ -16,7 +16,7 @@ class CreateReservations {
       .select(['r.id'])
       .from({ r: 'reservations' })
       .innerJoin('restaurants', 'r.restaurant_id', 'restaurants.id')
-      .where({ 'r.restaurant_id': restaurant_id, date, time })
+      .where({ 'r.restaurant_id': restaurant_id, date, time, canceled: null })
       .limit(tables_amount);
 
     if (reservations.length === tables_amount) {
@@ -32,7 +32,7 @@ class CreateReservations {
       })
       .returning(['id']);
 
-    return response.status(201).json({ reservation_id: id });
+    return response.status(201).json({ id });
   }
 }
 export { CreateReservations };

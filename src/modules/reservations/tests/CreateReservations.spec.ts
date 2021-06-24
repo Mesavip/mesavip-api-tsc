@@ -4,29 +4,18 @@ import request from 'supertest';
 import { app } from '../../../shared/infra/http/app';
 import query from '../../../shared/infra/knex/knex';
 
-const restaurant_id = 'feb8dfc9-de5f-4c42-b7d9-da42a258b9a8';
-const newDate = new Date();
+const restaurant_id = '3eb6cc7e-36f2-49af-b675-902cf3a0df36';
 const time = '23:45';
+const newDate = new Date();
 const date = newDate.toDateString();
 
 describe('Create a reservation', () => {
-  beforeEach(async () => {
-    await query('reservations').delete();
-
-    const user = {
-      name: 'client',
-      email: 'client@gmail.com',
-      cpf: '123.456.789-00',
-      password: '123456',
-    };
-
-    await request(app).post('/users/create').send(user);
-  });
+  beforeEach(async () => query('reservations').delete());
   afterAll(() => query('reservations').delete());
 
   it('should be able to create a reservation', async () => {
     const user = {
-      email: 'client@gmail.com',
+      email: 'daniel@gmail.com',
       password: '123456',
     };
 
@@ -44,7 +33,7 @@ describe('Create a reservation', () => {
 
   it('should not be able to create a reservation', async () => {
     const user = {
-      email: 'client@gmail.com',
+      email: 'daniel@gmail.com',
       password: '123456',
     };
 

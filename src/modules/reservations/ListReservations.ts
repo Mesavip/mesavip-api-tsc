@@ -17,8 +17,8 @@ class ListReservations {
       .innerJoin({ u: 'users' }, 'u.id', 'r.client_id')
       .innerJoin('restaurants', 'restaurants.id', 'r.restaurant_id')
       .where({ 'u.id': client_id, 'r.canceled': null })
-      .andWhereRaw('r.date <= now()::date')
-      .andWhereRaw('r.time < now()::time');
+      .andWhereRaw(`concat(r.date,' ', r.time)::timestamp < now()`)
+      .orderBy(['r.date', 'r.time']);
 
     const followingReservations = await query
       .select([
@@ -35,8 +35,8 @@ class ListReservations {
       .innerJoin('restaurants', 'restaurants.id', 'r.restaurant_id')
       .innerJoin({ a: 'addresses' }, 'a.restaurant_id', 'restaurants.id')
       .where({ 'u.id': client_id, 'r.canceled': null })
-      .andWhereRaw('r.date >= now()::date')
-      .andWhereRaw('r.time > now()::time');
+      .andWhereRaw(`concat(r.date,' ', r.time)::timestamp > now()`)
+      .orderBy(['r.date', 'r.time']);
 
     if (!pastReservations && !followingReservations.length) {
       return response.status(403).json({ error: 'No reservations were found' });
