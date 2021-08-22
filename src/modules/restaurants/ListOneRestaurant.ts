@@ -13,14 +13,15 @@ class ListOneRestaurant {
         'r.phone',
         'r.site',
         'c.name as culinary',
-        'a.bairro',
-        'a.cidade',
-        'a.estado',
         'a.cep',
         'a.logradouro',
         'a.numero',
         'a.complemento',
+        query.raw(`concat_ws(' - ', a.bairro, a.cidade, a.estado) as address`),
         query.raw('cast(avg(rat.rating) as decimal(10,1)) AS avg_rating'),
+        query.raw(
+          `concat_ws(' - ', to_char(r.opening_hour, 'HH24:MI'), to_char(r.closing_hour, 'HH24:MI')) as operation_hours`
+        ),
       ])
       .count('rat.rating as total_ratings')
       .from({ r: 'restaurants' })
