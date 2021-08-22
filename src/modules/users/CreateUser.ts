@@ -3,9 +3,16 @@ import { Request, Response } from 'express';
 
 import query from '../../shared/infra/knex/knex';
 
+interface ICreateUser {
+  name: string;
+  email: string;
+  password: string;
+  cpf: string;
+}
+
 class CreateUser {
   async execute(request: Request, response: Response): Promise<Response> {
-    const { name, email, password, cpf } = request.body;
+    const { name, email, password, cpf }: ICreateUser = request.body;
 
     if (!cpf) {
       return response.status(401).json({ error: 'CPF invalid' });

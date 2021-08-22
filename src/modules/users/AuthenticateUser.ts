@@ -5,6 +5,11 @@ import { sign } from 'jsonwebtoken';
 import authConfig from '../../config/auth';
 import query from '../../shared/infra/knex/knex';
 
+interface IAuthUser {
+  email: string;
+  password: string;
+}
+
 interface IResponse {
   token: string;
   user: {
@@ -15,7 +20,7 @@ interface IResponse {
 
 class AuthenticateUser {
   async execute(request: Request, response: Response): Promise<Response> {
-    const { email, password } = request.body;
+    const { email, password }: IAuthUser = request.body;
 
     const user = await query('users').where({ email }).first();
 

@@ -2,9 +2,15 @@ import { Request, Response } from 'express';
 
 import query from '../../shared/infra/knex/knex';
 
+interface ICreateReservation {
+  date: string;
+  time: string;
+  restaurant_id: string;
+}
+
 class CreateReservations {
   async execute(request: Request, response: Response): Promise<Response> {
-    const { date, time, restaurant_id } = request.body;
+    const { date, time, restaurant_id }: ICreateReservation = request.body;
     const { id: client_id } = request.user;
 
     const { tables_amount } = await query('restaurants')

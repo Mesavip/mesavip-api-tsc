@@ -7,9 +7,14 @@ import 'dotenv/config';
 import * as cloudinaryConfig from '../../config/cloudinary';
 import query from '../../shared/infra/knex/knex';
 
+interface ICreateFile {
+  type: string;
+  transformation: string;
+}
+
 class UploadFiles {
   async execute(request: Request, response: Response): Promise<Response> {
-    const { type, transformation } = request.body;
+    const { type, transformation }: ICreateFile = request.body;
     const { id: restaurant_id } = request.user;
     const { tempFilePath } = (request as any).files.file;
 
