@@ -1,17 +1,17 @@
 import { Request, Response } from 'express';
 
-import query from '../../shared/infra/knex/knex';
+import { db } from '../../shared/infra/knex/knex';
 
 class ListRatings {
   async execute(request: Request, response: Response): Promise<Response> {
     const { restaurant_id } = request.params;
 
-    const ratings = await query
+    const ratings = await db
       .select([
         'r.id',
         'r.comment',
         'r.rating',
-        query.raw(`to_char(r."createdAt", 'Mon dd, yyyy') as date`),
+        db.raw(`to_char(r."createdAt", 'Mon dd, yyyy') as date`),
         'client.name as client',
       ])
       .from({ r: 'ratings' })
