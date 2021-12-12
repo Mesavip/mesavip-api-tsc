@@ -20,7 +20,7 @@ export class CreateRatings {
       .returning('id');
 
     if (!id) {
-      return response.status(400).json({
+      return response.status(405).json({
         error:
           'You can only rate a reservation one hour after the scheduled time',
       });
