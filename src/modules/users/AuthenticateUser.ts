@@ -50,7 +50,7 @@ class AuthenticateUser {
       },
     };
 
-    return response.status(201).json(returnToken);
+    return response.status(200).json(returnToken);
   }
 }
 

@@ -1,13 +1,23 @@
 {
+  "include": [
+    "src/**/*"
+  ],
   "compilerOptions": {
-    "target": "es5",                                 
-    "module": "commonjs",                           
+    "target": "es5",
+    "module": "commonjs",
     "strict": true,
-    "strictPropertyInitialization": false,                        
-    "outDir": "./dist",                              
-    "esModuleInterop": true,                        
-    "skipLibCheck": true,                           
+    "strictPropertyInitialization": false,
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+      "@modules/*": ["modules/*"],
+      "@shared/*": ["shared/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@config/*": ["config/*"],
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true    
+    "resolveJsonModule": true
   }
 }

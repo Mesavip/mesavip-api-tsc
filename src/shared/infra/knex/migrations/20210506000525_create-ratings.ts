@@ -24,6 +24,15 @@ export async function up(knex: Knex): Promise<void> {
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
+    table
+      .uuid('reservation_id')
+      .unique()
+      .notNullable()
+      .references('id')
+      .inTable('reservations')
+      .onUpdate('CASCADE')
+      .onDelete('SET NULL');
+
     table.specificType('rating', 'smallint').unsigned().nullable();
     table.string('comment', 1000).unsigned().notNullable();
 

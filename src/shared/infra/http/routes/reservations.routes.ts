@@ -16,7 +16,16 @@ resevationsRoutes.delete(
   ensureAuthenticated,
   cancelReservation.execute
 );
-resevationsRoutes.get('/list', ensureAuthenticated, listReservations.execute);
+resevationsRoutes.get(
+  '/list-past',
+  ensureAuthenticated,
+  listReservations.listPastReservations
+);
+resevationsRoutes.get(
+  '/list-following',
+  ensureAuthenticated,
+  listReservations.listFollowingReservations
+);
 resevationsRoutes.post(
   '/create',
   ensureAuthenticated,

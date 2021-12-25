@@ -1,13 +1,18 @@
 import { Router } from 'express';
+import { ListRatingById } from '@modules/ratings/ListRatingById';
 import { CreateRatings } from '../../../../modules/ratings/CreateRating';
-import { ListRatings } from '../../../../modules/ratings/ListRatings';
+import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const ratingsRoutes = Router();
 
-const listRatings = new ListRatings();
 const createRatings = new CreateRatings();
+const listRatingById = new ListRatingById();
 
-ratingsRoutes.get('/list/:restaurant_id', listRatings.execute);
-ratingsRoutes.post('/create', createRatings.execute);
+ratingsRoutes.get(
+  '/list-by-id/:reservation_id',
+  ensureAuthenticated,
+  listRatingById.execute
+);
+ratingsRoutes.post('/create', ensureAuthenticated, createRatings.execute);
 
 export { ratingsRoutes };

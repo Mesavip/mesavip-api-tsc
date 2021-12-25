@@ -5,4 +5,5 @@ export interface Reservation {
   date: string;
   time: string;
   canceled: boolean | null;
+  rated: boolean | null;
 }
