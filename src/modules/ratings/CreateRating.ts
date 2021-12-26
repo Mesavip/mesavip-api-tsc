@@ -10,7 +10,7 @@ interface IRequest {
 export class CreateRatings {
   async execute(request: Request, response: Response): Promise<Response> {
     const { rating }: IRequest = request.body;
-    console.log(rating);
+    const { id: client_id } = request.user;
 
     const [CanUserRateTheReservation] = await db<Reservation>('reservations')
       .where({ id: rating.reservation_id, canceled: null })
@@ -28,7 +28,7 @@ export class CreateRatings {
 
     await db<Rating>('ratings').insert([
       {
-        client_id: rating.client_id,
+        client_id,
         restaurant_id: rating.restaurant_id,
         reservation_id: rating.reservation_id,
         rating: rating.rating,

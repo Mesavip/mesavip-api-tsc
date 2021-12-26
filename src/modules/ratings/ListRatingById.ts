@@ -12,7 +12,8 @@ export class ListRatingById {
         'comment',
         db.raw(`to_char("createdAt", 'Mon dd, yyyy') as date`),
       ])
-      .where({ reservation_id });
+      .where({ reservation_id })
+      .first();
 
     return response.status(200).json(rating);
   }
