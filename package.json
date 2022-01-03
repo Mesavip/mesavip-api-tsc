@@ -6,7 +6,9 @@
     "dev:test": "export DB_NAME=mesavip-tests && clear && ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "start": "node dist/src/shared/infra/http/server.js",
     "heroku:knex:migrate": "knex --knexfile dist/knexfile.js migrate:latest",
-    "test": "jest --runInBand --detectOpenHandles"
+    "test": "jest --runInBand --detectOpenHandles",
+    "seed": "yarn ts-node src/shared/infra/knex/seeds/index.ts",
+    "seed-test-user": "yarn ts-node src/shared/infra/knex/seeds/test-user/index.ts"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",

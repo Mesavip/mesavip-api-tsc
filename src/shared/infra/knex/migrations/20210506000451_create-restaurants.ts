@@ -8,15 +8,8 @@ export async function up(knex: Knex): Promise<void> {
       .notNullable()
       .defaultTo(knex.raw('uuid_generate_v4()'));
 
-    table
-      .uuid('culinary_id')
-      .notNullable()
-      .references('id')
-      .inTable('culinaries')
-      .onUpdate('CASCADE')
-      .onDelete('SET NULL');
-
     table.string('name').notNullable();
+    table.string('culinary').notNullable();
     table.string('email').unique().notNullable();
     table.string('cnpj').unique().notNullable();
     table.string('password_hash').notNullable();
