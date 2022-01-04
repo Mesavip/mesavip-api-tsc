@@ -16,7 +16,7 @@ export async function up(knex: Knex): Promise<void> {
       .onUpdate('CASCADE')
       .onDelete('SET NULL');
 
-    table.string('path').unique().notNullable();
+    table.string('path').notNullable();
     table.string('public_id').notNullable();
     table.string('type').notNullable();
 

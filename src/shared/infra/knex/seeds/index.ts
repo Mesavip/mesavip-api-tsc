@@ -4,6 +4,7 @@ import { seed_hours } from './hours';
 import { seed_address } from './addresses';
 import { seed_reservations } from './reservations';
 import { seed_ratings } from './ratings';
+import { seed_files } from './files';
 import { clear_data } from './clear-data';
 
 async function seed_users_and_restaurants() {
@@ -14,15 +15,16 @@ async function seed_users_and_restaurants() {
   }
 }
 
-async function seed_reservations_ratings_and_hours() {
+async function seed_reservations_ratings_files_and_hours() {
   await seed_reservations();
   await seed_ratings();
+  await seed_files();
   seed_hours();
 }
 
 async function main() {
   await seed_users_and_restaurants();
-  await seed_reservations_ratings_and_hours();
+  await seed_reservations_ratings_files_and_hours();
 }
 
 main();

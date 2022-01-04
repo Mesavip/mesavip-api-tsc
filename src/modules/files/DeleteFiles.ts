@@ -16,10 +16,10 @@ class DeleteFiles {
         restaurant_id,
       })
       .andWhere(function () {
-        if (type === 'galeria') {
+        if (type === 'gallery') {
           this.where({ type });
         } else {
-          this.whereNot({ type: 'galeria' });
+          this.whereNot({ type: 'gallery' });
         }
       });
 
