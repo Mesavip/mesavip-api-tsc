@@ -8,6 +8,7 @@ class ListRestaurantById {
 
     const restaurant = await query
       .select([
+        'r.id',
         'r.name',
         'r.about',
         'r.phone',
@@ -33,7 +34,7 @@ class ListRestaurantById {
           ) as operation_hours`
         ),
       ])
-      .count('rat.rating as total_ratings')
+      .count('rat.rating as total_reviews')
       .from({ r: 'restaurants' })
       .innerJoin({ a: 'addresses' }, 'a.restaurant_id', 'r.id')
       .innerJoin({ rat: 'ratings' }, 'rat.restaurant_id', 'r.id')
