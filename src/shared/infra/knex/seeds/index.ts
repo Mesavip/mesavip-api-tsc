@@ -5,7 +5,7 @@ import { seed_address } from './addresses';
 import { seed_reservations } from './reservations';
 import { seed_ratings } from './ratings';
 import { seed_files } from './files';
-import { clear_data } from './clear-data';
+// import { clear_data } from './clear-data';
 
 async function seed_users_and_restaurants() {
   for (let index = 0; index < 20; index++) {

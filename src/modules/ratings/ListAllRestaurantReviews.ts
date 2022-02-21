@@ -16,7 +16,8 @@ class ListAllRestaurantReviews {
       .innerJoin({ client: 'users' }, 'client.id', 'r.client_id')
       .where({
         'r.restaurant_id': restaurant_id,
-      });
+      })
+      .orderBy('r.rating', 'desc');
 
     if (!reviews.length) {
       return response.status(404).json({ error: 'No reviews were found' });
