@@ -1,6 +1,6 @@
-import { db } from '@shared/infra/knex/knex';
 import { Request, Response } from 'express';
-import { Rating } from '@interfaces/Rating';
+import { Rating } from '../../interfaces/Rating';
+import { db } from '../../shared/infra/knex/knex';
 
 export class ListRatingById {
   async execute(request: Request, response: Response): Promise<Response> {

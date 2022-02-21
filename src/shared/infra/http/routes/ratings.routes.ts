@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { ListRatingById } from '@modules/ratings/ListRatingById';
-import { CreateRatings } from '@modules/ratings/CreateRating';
-import { ListAllRestaurantReviews } from '@modules/ratings/ListAllRestaurantReviews';
+import { ListRatingById } from '../../../../modules/ratings/ListRatingById';
+import { CreateRatings } from '../../../../modules/ratings/CreateRating';
+import { ListAllRestaurantReviews } from '../../../../modules/ratings/ListAllRestaurantReviews';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const ratingsRoutes = Router();

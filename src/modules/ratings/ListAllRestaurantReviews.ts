@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { db } from '@shared/infra/knex/knex';
+import { db } from '../../shared/infra/knex/knex';
 
 class ListAllRestaurantReviews {
   async execute(request: Request, response: Response): Promise<Response> {
