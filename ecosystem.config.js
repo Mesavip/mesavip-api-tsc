@@ -1,0 +1,15 @@
+module.exports = {
+  apps: [
+    {
+      name: 'app',
+      script: './dist/src/shared/infra/http/server.js',
+      instances: 'max',
+      env: {
+        NODE_ENV: 'development',
+      },
+      env_production: {
+        NODE_ENV: 'production',
+      },
+    },
+  ],
+};

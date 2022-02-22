@@ -4,7 +4,7 @@
     "build": "tsc",
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "dev:test": "export DB_NAME=mesavip-tests && clear && ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
-    "start": "pm2 start dist/src/shared/infra/http/server.js",
+    "start": "pm2-runtime start ecosystem.config.js --env production",
     "heroku:knex:migrate": "knex --knexfile dist/knexfile.js migrate:latest",
     "test": "jest --runInBand --detectOpenHandles",
     "seed": "yarn ts-node src/shared/infra/knex/seeds/index.ts",
