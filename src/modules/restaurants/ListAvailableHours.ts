@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { isAfter } from 'date-fns';
 
 import query from '../../shared/infra/knex/knex';
 
@@ -11,24 +12,45 @@ class ListAvailableHours {
       .where({ id: restaurant_id })
       .first();
 
-    const availableHours = await query
-      .select('h.id', query.raw(`to_char(h.hour, 'HH24:MI') as hour`))
-      .from({ h: 'hours' })
-      .whereNotIn('h.hour', function () {
-        this.select('r.time')
-          .from({ r: 'reservations' })
-          .innerJoin('restaurants', 'r.restaurant_id', 'restaurants.id')
-          .where({ 'r.restaurant_id': restaurant_id, 'r.date': date })
-          .groupBy('r.time', 'restaurants.tables_amount')
-          .havingRaw('count(r.time) = restaurants.tables_amount');
-      })
-      .whereRaw('h.hour > now()::time')
-      .andWhere('h.hour', '>=', opening_hour)
-      .andWhere('h.hour', '<=', closing_hour)
-      .orderBy('h.hour');
+    let availableHours: any = [];
+
+    const today = Date.parse(date);
+
+    if (isAfter(new Date(today), new Date())) {
+      availableHours = await query
+        .select('h.id', query.raw(`to_char(h.hour, 'HH24:MI') as hour`))
+        .from({ h: 'hours' })
+        .whereNotIn('h.hour', function () {
+          this.select('r.time')
+            .from({ r: 'reservations' })
+            .innerJoin('restaurants', 'r.restaurant_id', 'restaurants.id')
+            .where({ 'r.restaurant_id': restaurant_id, 'r.date': date })
+            .groupBy('r.time', 'restaurants.tables_amount')
+            .havingRaw('count(r.time) = restaurants.tables_amount');
+        })
+        .andWhere('h.hour', '>=', opening_hour)
+        .andWhere('h.hour', '<=', closing_hour)
+        .orderBy('h.hour');
+    } else {
+      availableHours = await query
+        .select('h.id', query.raw(`to_char(h.hour, 'HH24:MI') as hour`))
+        .from({ h: 'hours' })
+        .whereNotIn('h.hour', function () {
+          this.select('r.time')
+            .from({ r: 'reservations' })
+            .innerJoin('restaurants', 'r.restaurant_id', 'restaurants.id')
+            .where({ 'r.restaurant_id': restaurant_id, 'r.date': date })
+            .groupBy('r.time', 'restaurants.tables_amount')
+            .havingRaw('count(r.time) = restaurants.tables_amount');
+        })
+        .whereRaw('h.hour > now()::time')
+        .andWhere('h.hour', '>=', opening_hour)
+        .andWhere('h.hour', '<=', closing_hour)
+        .orderBy('h.hour');
+    }
 
     if (!availableHours.length) {
-      return response.status(404).json({ error: 'Reservation not available' });
+      return response.status(403).json({ error: 'Reservation not available' });
     }
 
     return response.status(201).json(availableHours);
