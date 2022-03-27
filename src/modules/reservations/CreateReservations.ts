@@ -26,7 +26,7 @@ class CreateReservations {
       .limit(tables_amount);
 
     if (reservations.length === tables_amount) {
-      return response.status(404).json({ error: 'Reservation not available' });
+      return response.status(401).json({ error: 'Reservation not available' });
     }
 
     const [id] = await query('reservations')
