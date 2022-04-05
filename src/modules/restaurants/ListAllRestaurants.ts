@@ -29,7 +29,7 @@ class ListAllRestaurants {
       .innerJoin({ a: 'addresses' }, 'a.restaurant_id', 'r.id')
       .innerJoin({ f: 'files' }, 'r.id', 'f.restaurant_id')
       .leftJoin({ rat: 'ratings' }, 'rat.restaurant_id', 'r.id')
-      .where({ 'f.type': 'list' })
+      .where({ 'f.type': 'banner' })
       .where((query) => {
         if (name) {
           query.whereRaw(`upper(r.name) like upper('%'||?||'%')`, [name]);
